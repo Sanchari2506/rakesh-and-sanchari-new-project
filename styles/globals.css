@@ -1,0 +1,170 @@
+/* -------------------------------------------------------- */
+/* 1️⃣ Load Google Fonts FIRST — required before using them */
+/* -------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* -------------------------------------------------------- */
+/* 2️⃣ Tailwind layers MUST come immediately after imports   */
+/* -------------------------------------------------------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------- */
+/* 3️⃣ Root variables                                       */
+/* -------------------------------------------------------- */
+:root {
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --font-heading: "Montserrat", Georgia, "Times New Roman", serif;
+
+  --img-hero: url("/images/hero.svg");
+  --img-pattern: url("/images/pattern.svg");
+
+  --bg: #ffffff;
+  --text: #111827;
+}
+
+/* -------------------------------------------------------- */
+/* 4️⃣ Global resets                                         */
+/* -------------------------------------------------------- */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* -------------------------------------------------------- */
+/* 5️⃣ Default text styles (Poppins)                         */
+/* -------------------------------------------------------- */
+body {
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------------------- */
+/* 6️⃣ Headings use Montserrat                              */
+/* -------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* ----- Your custom classes stay unchanged ----- */
+.logo {
+  height: 3em;
+  margin: 5px;
+}
+
+.team-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #0a3758;
+  padding: 62px 80px 42px;
+  border-radius: 80px 0 80px 0;
+}
+
+.service-item {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.exp-text {
+  text-shadow: 2px 2px 2px rgba(149, 144, 144, 0.8);
+}
+
+.category-logo {
+  border-radius: 10px;
+  background: #0a3758;
+  -webkit-box-shadow: 0px 12px 28px 0px rgba(97, 99, 118, 0.06),
+    0px 35px 40px 0px rgba(116, 132, 157, 0.05);
+  box-shadow: 0px 12px 28px 0px rgba(97, 99, 118, 0.06),
+    0px 35px 40px 0px rgba(116, 132, 157, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sr-border-right {
+  border-right: 2px solid #ffffff;
+}
+.sr-border-left {
+  border-left: 2px solid #ffffff;
+}
+.subscription-button {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  padding-block: 15px;
+}
+
+/* ----- Mobile styles ----- */
+@media screen and (max-width: 767px) {
+  .subscription-button {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding-block: 15px;
+  }
+  .sr-border-right {
+    border-right: 0px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+  }
+  .sr-border-left {
+    border-left: 0px solid #ffffff;
+    border-top: 2px solid #ffffff;
+  }
+  .team-details-content {
+    padding: 40px;
+  }
+  .team-details-content p {
+    text-align: justify;
+  }
+  .footer-logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .quick-links-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .company-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  ul.space-y-2 {
+    text-align: center;
+  }
+  .company-info-wrapper p {
+    text-align: center;
+  }
+}
