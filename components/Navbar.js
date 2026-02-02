@@ -21,15 +21,15 @@ export default function Navbar() {
     { label: "About", href: "/about-us", icon: FiInfo },
     {
       label: "Services",
-      href: "/services",
+      href: "/#ServicesSection",
       icon: SiAmazonsimpleemailservice,
-      children: [
-        {
-          label: "Finance Consultation",
-          href: "/services/finance-consultation",
-        },
-        { label: "Finance Advisor", href: "/services/finance-advisor" },
-      ],
+      // children: [
+      //   {
+      //     label: "Finance Consultation",
+      //     href: "/services/finance-consultation",
+      //   },
+      //   { label: "Finance Advisor", href: "/services/finance-advisor" },
+      // ],
     },
     { label: "Contact", href: "/contact-us", icon: FiPhone },
   ];
