@@ -18,7 +18,7 @@ export default function Navbar() {
   const menus = [
     { label: "Home", href: "/", icon: FiHome },
     { label: "FAQs", href: "/faqs", icon: FaQuestion },
-    { label: "About", href: "/about-us", icon: FiInfo },
+    { label: "About", href: "/about", icon: FiInfo },
     {
       label: "Services",
       href: "/#ServicesSection",
@@ -31,7 +31,7 @@ export default function Navbar() {
       //   { label: "Finance Advisor", href: "/services/finance-advisor" },
       // ],
     },
-    { label: "Contact", href: "/contact-us", icon: FiPhone },
+    { label: "Contact", href: "/contact", icon: FiPhone },
   ];
 
   return (
