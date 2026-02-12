@@ -9,7 +9,7 @@ export default function Footer() {
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms & Conditions", href: "/terms-and-conditions" },
     { label: "Investor Charter", href: "/investor-charter" },
-    { label: "Investor Complaints & Grievance", href: "/investor-complaints" },
+    // { label: "Investor Complaints & Grievance", href: "/investor-complaints" },
     { label: "Grievance Redressal", href: "/grievance-redressal" },
     { label: "Disclaimer", href: "/disclaimer" },
     { label: "FAQs", href: "/faqs" },
