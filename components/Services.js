@@ -1,84 +1,66 @@
 import React from "react";
+import ItemCard from "./ItemCard";
 
 function Services() {
+  let items = [
+    {
+      image: "/images/small-cap.jpeg",
+      title: "Small & Micro Cap Product",
+      description: `<p class="text-base mb-8">
+                  We recommend well-researched SME stocks with strong potential for multifold returns.
+                </p>
+                <ul class="list-disc md:list-inside md:space-y-2">
+                  <li><strong>Market Cap:</strong> ₹100 Cr – ₹5,000 Cr</li>
+                  <li><strong>Ideas:</strong> 12–15 high-conviction research ideas annually</li>
+                  <li><strong>Research:</strong> Comprehensive, in-depth reports</li>
+                  <li><strong>Holding Period:</strong> 1–2 years</li>
+                  <li><strong>Active Tracking:</strong> Clear exit calls provided.</li>
+                </ul>
+                <p class="text-base mb-8">Focused. Research-driven. High-growth potential.</p>`,
+
+      price: "INR 14,999 (1 year subscription)",
+      link: "https://lnprcapital.akamai.net.in/quick-pay/10/2",
+    },
+    {
+      image: "/images/master-club.jpeg",
+      title: "LNPR SME MASTER CLUB",
+      description: `<p class="text-base mb-8">
+                  We recommend well-researched SME stocks with strong potential for multifold returns.
+                </p>
+                <ul class="list-disc md:list-inside md:space-y-2">
+                  <li><strong>Market Cap:</strong> ₹100 Cr – ₹2,000 Cr</li>
+                  <li><strong>Ideas:</strong> 20–25 high-conviction research ideas annually</li>
+                  <li><strong>Research:</strong> Detailed, comprehensive reports</li>
+                  <li><strong>Holding Period:</strong> ~1 year</li>
+                  <li><strong>Support:</strong> Timely exit calls</li>
+                </ul>
+                <p class="text-base mb-8">Disciplined. Research-backed. Growth-focused.</p>`,
+
+      price: "INR 14,999 (1 year subscription)",
+      link: "https://lnprcapital.akamai.net.in/quick-pay/10/1",
+    },
+  ];
   return (
-    <div id="ServicesSection">
+    <div id="ServicesSection" className="bg-[#d2e2f96b]">
       <div className="mx-auto max-w-7xl px-6 py-10">
         <div className="text-center section-header">
           <h2 className="mb-6 exp-text text-3xl md:text-5xl font-bold md:font-extrabold text-[#ffb224] text-center">
             Our Services
           </h2>
         </div>
-        <div className="section-content w-full bg-[#0a3758] text-white rounded-3xl p-6 md:p-10">
+        <div className="section-content w-full">
           <div className="md:flex md:justify-center md:items-start md:gap-8">
-            {/* Service One  */}
-            <div className="box-card-item sr-border-right p-4 w-full h-auto md:w-1/2 md:h-[500px] flex flex-col justify-between">
-              <div className="service-details">
-                <h3 className="text-2xl font-semibold mb-2 text-center">
-                  Small & Micro Cap Product
-                </h3>
-                <p className="text-base mb-8">
-                  Here we search for Small and Micro Cap companies that have the
-                  potential to generate multifold returns.
-                </p>
-                <ul className="list-disc md:list-inside md:space-y-2">
-                  <li>Market Cap between 100 Cr – 5000 Cr.</li>
-                  <li>12-15 Research ideas will be shared annually.</li>
-                  <li>Comprehensive Research Reports.</li>
-                  <li>Holding duration 1 to 2 years.</li>
-                  <li>Exit call will be provided.</li>
-                  <li>
-                    Quarterly Performance Statement report will be provided.
-                  </li>
-                </ul>
+            {items.map((item, index) => (
+              <div key={index} className="mb-10 md:mb-0">
+                <ItemCard
+                  image={item.image}
+                  title={item.title}
+                  description={item.description}
+                  price={item.price}
+                  link={item.link}
+                />
               </div>
-
-              <a
-                href="https://lnprcapital.akamai.net.in/quick-pay/10/2"
-                target="_blank"
-              >
-                <div
-                  id="SmallAndMicroCap"
-                  className="subscription-button text-center bg-white text-black px-4 rounded-md mt-5 md:mt-0 mb-5 md:mb-0"
-                >
-                  ₹ 14,999/12 Months
-                </div>
-              </a>
-            </div>
-            {/* Service Two  */}
-            <div className="box-card-item sr-border-left p-4 w-full h-auto md:w-1/2 md:h-[500px] flex flex-col justify-between">
-              <div className="service-details">
-                <h3 className="text-2xl font-semibold mb-2 text-center">
-                  LNPR SME MASTER CLUB
-                </h3>
-                <p className="text-base mb-8">
-                  Here we will recommend well researched SME Stocks that have
-                  the potential to generate multifold returns.
-                </p>
-                <ul className="list-disc md:list-inside md:space-y-2">
-                  <li>Market Cap between 100 Cr - 2000 Cr.</li>
-                  <li>20-25 Research ideas will be shared annually.</li>
-                  <li>Comprehensive Research Reports.</li>
-                  <li>Holding duration 1 year.</li>
-                  <li>Exit call will be provided.</li>
-                  <li>
-                    Quarterly Performance Statement report will be provided.
-                  </li>
-                </ul>
-              </div>
-
-              <a
-                href="https://lnprcapital.akamai.net.in/quick-pay/10/1"
-                target="_blank"
-              >
-                <div
-                  id="QAntInvesting"
-                  className="subscription-button text-center bg-white text-black px-4 rounded-md mt-5 md:mt-0"
-                >
-                  ₹ 14,999/12 Months
-                </div>
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </div>

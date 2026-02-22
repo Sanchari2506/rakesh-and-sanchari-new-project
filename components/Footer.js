@@ -9,7 +9,7 @@ export default function Footer() {
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms & Conditions", href: "/terms-and-conditions" },
     { label: "Investor Charter", href: "/investor-charter" },
-    // { label: "Investor Complaints & Grievance", href: "/investor-complaints" },
+    { label: "Investor Complaints & Grievance", href: "/investor-complaints" },
     { label: "Grievance Redressal", href: "/grievance-redressal" },
     { label: "Disclaimer", href: "/disclaimer" },
     { label: "FAQs", href: "/faqs" },
@@ -42,6 +42,9 @@ export default function Footer() {
             </p>
             <p>
               SEBI Registration No: <strong>INH000012953</strong>
+            </p>
+            <p>
+              BSE ENLISTMENT No: <strong>5843</strong>
             </p>
 
             <div className="mt-4 space-y-1">
