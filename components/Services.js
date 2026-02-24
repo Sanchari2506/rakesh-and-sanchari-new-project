@@ -7,7 +7,7 @@ function Services() {
       image: "/images/small-cap.jpeg",
       title: "Small & Micro Cap Product",
       description: `<p class="text-base mb-8">
-                  We recommend well-researched SME stocks with strong potential for multifold returns.
+                  We identify high-potential Small & Micro Cap companies positioned to deliver multifold returns.
                 </p>
                 <ul class="list-disc md:list-inside md:space-y-2">
                   <li><strong>Market Cap:</strong> ₹100 Cr – ₹5,000 Cr</li>
