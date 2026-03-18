@@ -162,7 +162,7 @@ export default function Home() {
                 className="__cf_email__"
                 data-cfemail="fa93949c95ba96948a88999b8a938e9b96d4999597"
               >
-                dasrakesh425@gmail.com
+                info@lnprcapital.com
               </span>
             </a>
           </span>
@@ -920,7 +920,7 @@ export default function Home() {
                 className="__cf_email__"
                 data-cfemail="4821262e27082426383a2b2938213c2924662b2725"
               >
-                dasrakesh425@gmail.com
+                info@lnprcapital.com
               </span>
             </a>{" "}
             for any queries, complaints or grievances. Grievances will be
@@ -998,7 +998,7 @@ export default function Home() {
                     className="__cf_email__"
                     data-cfemail="c4adaaa2ab84a8aab4b6a7a5b4adb0a5a8eaa7aba9"
                   >
-                    dasrakesh425@gmail.com
+                    info@lnprcapital.com
                   </a>{" "}
                   for any queries.
                 </div>
@@ -1151,7 +1151,7 @@ export default function Home() {
                       className="__cf_email__"
                       data-cfemail="4e272028210e22203e3c2d2f3e273a2f22602d2123"
                     >
-                      dasrakesh425@gmail.com
+                      info@lnprcapital.com
                     </span>
                   </a>
                 </p>
