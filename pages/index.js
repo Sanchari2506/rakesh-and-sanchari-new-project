@@ -162,7 +162,7 @@ export default function Home() {
                 className="__cf_email__"
                 data-cfemail="fa93949c95ba96948a88999b8a938e9b96d4999597"
               >
-                [email&#160;protected]
+                dasrakesh425@gmail.com
               </span>
             </a>
           </span>
@@ -171,9 +171,11 @@ export default function Home() {
         {/* NAV */}
         <nav>
           <a href="#" className="nav-logo">
-            <div className="nav-logo-icon">L</div>
+            <div className="nav-logo-icon">
+              <img src="/images/logo.svg" alt="LNPR Capital" />
+            </div>
             <div className="nav-logo-text">
-              LNPR Capital<span>Investment Research</span>
+              LNPR Capital
             </div>
           </a>
           <ul className="nav-links">
@@ -267,7 +269,9 @@ export default function Home() {
         <section className="who" id="who">
           <div className="who-inner">
             <div className="who-img">
-              <div className="who-img-block">📈</div>
+              <div className="who-img-block">
+                <img src="/images/image-hero.png" alt="Who We Are" />
+              </div>
               <div className="who-img-badge">
                 <div className="num">100%</div>
                 <div className="txt">Skin in the Game</div>
@@ -327,7 +331,7 @@ export default function Home() {
             </div>
             <h2 className="section-title white">What Makes Us Different</h2>
             <p className="section-sub" style={{ color: "rgba(255,255,255,0.4)" }}>
-              Nine principles that define how we think, research, and serve our
+              Principles that define how we think, research, and serve our
               clients.
             </p>
           </div>
@@ -350,17 +354,9 @@ export default function Home() {
                 must bring data."
               </p>
             </div>
+            
             <div className="why-card">
               <div className="why-num">03</div>
-              <h3>No Middlemen or Distributors</h3>
-              <p>
-                We deal directly with our clients and pass every benefit to you
-                — not to distributors. We focus entirely on research, not on
-                sales presentations.
-              </p>
-            </div>
-            <div className="why-card">
-              <div className="why-num">04</div>
               <h3>Your Money in Your Hands</h3>
               <p>
                 Your capital stays in your bank account and your own demat. You
@@ -368,26 +364,16 @@ export default function Home() {
                 custodian.
               </p>
             </div>
+            
+            <div className="why-card">
+              <div className="why-num">04</div>
+              <h3>Your Capital, Your Control</h3>
+              <p>
+                Your funds always remain securely in your own bank account and demat account. You retain complete ownership and decision-making authority, while we serve only as your trusted advisor — never a custodian.
+              </p>
+            </div>
             <div className="why-card">
               <div className="why-num">05</div>
-              <h3>ESG & Sustainable Focus</h3>
-              <p>
-                We invest in companies prioritising sustainability and
-                responsible practices. ESG integration is central to our
-                research framework for long-term alpha.
-              </p>
-            </div>
-            <div className="why-card">
-              <div className="why-num">06</div>
-              <h3>Transparent Communication</h3>
-              <p>
-                We openly acknowledge when a thesis is wrong. We hold regular
-                client calls and communicate clearly — even when the news is
-                difficult to share.
-              </p>
-            </div>
-            <div className="why-card">
-              <div className="why-num">07</div>
               <h3>Exit is as Important as Entry</h3>
               <p>
                 We are not in the "buy right, sit tight" camp. We actively track
@@ -396,7 +382,7 @@ export default function Home() {
               </p>
             </div>
             <div className="why-card">
-              <div className="why-num">08</div>
+              <div className="why-num">06</div>
               <h3>Deep Fundamental Research</h3>
               <p>
                 Our analysts go beyond screeners. On-ground research, management
@@ -405,12 +391,10 @@ export default function Home() {
               </p>
             </div>
             <div className="why-card">
-              <div className="why-num">09</div>
-              <h3>Integrity Above All</h3>
+              <div className="why-num">07</div>
+              <h3>Exit is Important</h3>
               <p>
-                We follow all SEBI guidelines and put our clients' interests
-                first — always. We think long-term and grow only when our
-                clients grow with us.
+                Each investment is actively monitored, and we provide timely exit recommendations whenever the fundamentals change.
               </p>
             </div>
           </div>
@@ -575,7 +559,7 @@ export default function Home() {
             <div className="beliefs-sticky">
               <div className="section-eyebrow">Our Philosophy</div>
               <h2 className="section-title" style={{ marginBottom: "24px" }}>
-                Our Belief &amp; Learnings
+                Guided by Experience. Driven by Discipline
               </h2>
               <div
                 style={{
@@ -587,9 +571,7 @@ export default function Home() {
               ></div>
               <div className="beliefs-intro">
                 <p>
-                  These are the principles we have crystallised through years of
-                  investing in Indian equity markets — lessons learned the hard
-                  way, shared honestly.
+                  Principles shaped by years of investing — lessons learned and shared with honesty.
                 </p>
               </div>
             </div>
@@ -938,7 +920,7 @@ export default function Home() {
                 className="__cf_email__"
                 data-cfemail="4821262e27082426383a2b2938213c2924662b2725"
               >
-                [email&#160;protected]
+                dasrakesh425@gmail.com
               </span>
             </a>{" "}
             for any queries, complaints or grievances. Grievances will be
@@ -966,36 +948,7 @@ export default function Home() {
                 believe in transparent communication — here are the questions we
                 hear most often.
               </p>
-              <div className="contact-box">
-                <h4>Still have questions?</h4>
-                <p>
-                  📞 <a href="tel:+916290500733">+91 6290500733</a>
-                </p>
-                <p>
-                  📞 <a href="tel:+916291136628">+91 6291136628</a>
-                </p>
-                <p>
-                  ✉{" "}
-                  <a href="/cdn-cgi/l/email-protection#4e272028210e22203e3c2d2f3e273a2f22602d2123">
-                    <span
-                      className="__cf_email__"
-                      data-cfemail="f49d9a929bb4989a84869795849d809598da979b99"
-                    >
-                      [email&#160;protected]
-                    </span>
-                  </a>
-                </p>
-                <p
-                  style={{
-                    marginTop: "12px",
-                    fontSize: "12px",
-                    color: "rgba(255,255,255,0.35)",
-                  }}
-                >
-                  17, Subhash Nagar, 1st Bye Lane,<br></br>Dumdum Cantonment,
-                  Kolkata - 700065
-                </p>
-              </div>
+              
             </div>
             <div className="faq-list">
               <div className={`faq-item${openFaqItems[0] ? " open" : ""}`}>
@@ -1009,8 +962,7 @@ export default function Home() {
                 <div className="faq-a">
                   LNPR Capital is a SEBI-registered equity research firm
                   offering subscription-based research services on Indian small
-                  and micro-cap stocks. We believe in data-backed, long-term
-                  investing — with skin in the game.
+                  and micro-cap stocks.
                 </div>
               </div>
               <div className={`faq-item${openFaqItems[1] ? " open" : ""}`}>
@@ -1046,7 +998,7 @@ export default function Home() {
                     className="__cf_email__"
                     data-cfemail="c4adaaa2ab84a8aab4b6a7a5b4adb0a5a8eaa7aba9"
                   >
-                    [email&#160;protected]
+                    dasrakesh425@gmail.com
                   </a>{" "}
                   for any queries.
                 </div>
@@ -1105,7 +1057,7 @@ export default function Home() {
           <div className="footer-top">
             <div className="footer-brand">
               <span className="logo-f">LNPR Capital</span>
-              <span className="tagline-f">Investment & Financial Research</span>
+              <span className="tagline-f">A Boutique Research House</span>
               <p>
                 We aim to be a trustworthy, reliable, and professional equity
                 research organisation for serious Indian investors — with
@@ -1188,7 +1140,7 @@ export default function Home() {
                 <p>
                   <a href="tel:+916290500733">+91 6290500733</a>
                   <br></br>
-                  <a href="tel:+916291136628">+91 6291136628</a>
+                  <a href="tel:+91 9874483593">+91 9874483593</a>
                 </p>
               </div>
               <div className="footer-contact-item">
@@ -1199,7 +1151,7 @@ export default function Home() {
                       className="__cf_email__"
                       data-cfemail="4e272028210e22203e3c2d2f3e273a2f22602d2123"
                     >
-                      [email&#160;protected]
+                      dasrakesh425@gmail.com
                     </span>
                   </a>
                 </p>
