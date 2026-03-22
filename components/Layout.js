@@ -4,9 +4,10 @@ import Footer from "./Footer";
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* <Header /> */}
-      <main className="flex-1">{children}</main>
-      {/* <Footer /> */}
+      <Header />
+      <div className="flex-1">{children}</div>
+      {/* Footer is in _app.js to be present on all pages */}
+      <Footer/>
     </div>
   );
 }

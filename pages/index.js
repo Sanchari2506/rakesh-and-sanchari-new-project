@@ -1,14 +1,176 @@
-import Head from "next/head";
-import { useEffect, useState } from "react";
-import Header from "@components/Header";
 import Footer from "@components/Footer";
-import Image from "next/image";
-import FAQIndex from "@components/FAQIndex";
-// Example icons from react-icons (Feather)
-import { FiCoffee, FiUsers } from "react-icons/fi";
-import FinancialCompass from "@components/FinancialCompass";
-import Services from "@components/Services";
-import ComplaintStatus from "@components/ComplaintStatus";
+import Head from "next/head";
+import { useEffect, useRef, useState } from "react";
+
+const CASE_STUDY_FILTERS = [
+  { value: "all", label: "All" },
+  { value: "holding", label: "Holding" },
+  { value: "exited", label: "Exited" },
+];
+
+const CASE_STUDIES = [
+  {
+    title: "ABC Engineering Ltd",
+    status: "holding",
+    sector: "Auto Ancillary",
+    recoPrice: "₹XXX / share",
+    thesis:
+      "A diversified engineering company with vertically integrated manufacturing capabilities, benefitting from India's manufacturing supercycle and strong order inflows across automotive and aerospace segments.",
+    metrics: [
+      { value: "XX%", label: "Revenue CAGR" },
+      { value: "XX%", label: "PAT CAGR" },
+      { value: "XX%", label: "RoCE" },
+      { value: "XXx", label: "P/E (FY25e)" },
+    ],
+    returnLabel: "Target Price",
+    returnValue: "₹XXX",
+  },
+  {
+    title: "XYZ Chemicals Ltd",
+    status: "holding",
+    sector: "Specialty Chemicals",
+    recoPrice: "₹XXX / share",
+    thesis:
+      "A specialty chemicals player with strong export visibility and expanding capacity. China+1 tailwind driving incremental order wins; management has strong execution track record across business cycles.",
+    metrics: [
+      { value: "XX%", label: "EBITDA Margin" },
+      { value: "XX%", label: "Export Mix" },
+      { value: "₹XXCr", label: "Capex Pipeline" },
+      { value: "XXx", label: "EV/EBITDA" },
+    ],
+    returnLabel: "Target Price",
+    returnValue: "₹XXX",
+  },
+  {
+    title: "PQR Consumer Ltd",
+    status: "holding",
+    sector: "Consumer Goods",
+    recoPrice: "₹XXX / share",
+    thesis:
+      "An under-the-radar consumer brand with dominant regional presence, transitioning to a national footprint. Asset-light model with high cash generation and zero debt provides significant margin of safety.",
+    metrics: [
+      { value: "XX%", label: "Revenue CAGR" },
+      { value: "XX%", label: "RoE" },
+      { value: "Zero", label: "Net Debt" },
+      { value: "XXx", label: "P/E (FY25e)" },
+    ],
+    returnLabel: "Target Price",
+    returnValue: "₹XXX",
+  },
+  {
+    title: "DEF Defence Ltd",
+    status: "exited",
+    sector: "Defence & Aerospace",
+    recoPrice: "₹XXX / share",
+    exitPrice: "₹XXX",
+    thesis:
+      "Recommended on the thesis of significant indigenisation push by GoI presenting a multi-year growth runway, with a strong order pipeline across helicopters, aircraft, and engine segments worth $35-40 billion.",
+    metrics: [
+      { value: "XX%", label: "Revenue CAGR" },
+      { value: "XX%", label: "PAT CAGR" },
+      { value: "XX%", label: "RoE" },
+      { value: "Net Cash", label: "Balance Sheet" },
+    ],
+    returnLabel: "Returns Delivered",
+    returnValue: "X.Xx",
+    returnNote: "in XX months",
+  },
+  {
+    title: "GHI Engineering Ltd",
+    status: "exited",
+    sector: "Capital Goods",
+    recoPrice: "₹XXX / share",
+    exitPrice: "₹XXX",
+    thesis:
+      "A proxy play on India's water and energy capex recovery. New product introductions and a focus on exports and service revenue provided a strong earnings upgrade cycle over the holding period.",
+    metrics: [
+      { value: "XX%", label: "Revenue Growth" },
+      { value: "XX%", label: "EBITDA Growth" },
+      { value: "XX%", label: "PAT Growth" },
+      { value: "₹XXCr", label: "New Order Win" },
+    ],
+    returnLabel: "Returns Delivered",
+    returnValue: "X.Xx",
+    returnNote: "in XX months",
+  },
+  {
+    title: "JKL Tech Ltd",
+    status: "exited",
+    sector: "Technology",
+    recoPrice: "₹XXX / share",
+    exitPrice: "₹XXX",
+    thesis:
+      "Recommended on the thesis of rising EV investments by global auto OEMs driving demand for Auto ER&D services. Margin expansion from better utilisation and order inflows provided a significant re-rating catalyst.",
+    metrics: [
+      { value: "XX%", label: "Margin at Reco" },
+      { value: "XX%", label: "Margin at Exit" },
+      { value: "XXx", label: "P/E at Reco" },
+      { value: "XXx", label: "P/E at Exit" },
+    ],
+    returnLabel: "Returns Delivered",
+    returnValue: "X.Xx",
+    returnNote: "in XX months",
+  },
+];
+
+const EXITED_CASE_STUDY_RETURN_STYLE = {
+  background: "rgba(26,122,74,0.1)",
+  borderColor: "rgba(26,122,74,0.3)",
+};
+
+const EXITED_CASE_STUDY_VALUE_STYLE = {
+  color: "#4ade80",
+};
+
+const CASE_STUDY_NOTE_STYLE = {
+  fontSize: "13px",
+  fontFamily: "Outfit, sans-serif",
+};
+
+const TESTIMONIALS = [
+  {
+    avatar: "R",
+    name: "Rajesh M.",
+    designation: "Business Owner",
+    location: "Mumbai",
+    text: "The research quality at LNPR is genuinely different. Every report comes with a clear thesis, risk factors, and exit triggers - not just a buy call. I finally feel like I understand what I own and why. The depth of analysis and the transparent communication have been exceptional throughout my subscription.",
+  },
+  {
+    avatar: "S",
+    name: "Sunita P.",
+    designation: "Retired Professional",
+    location: "Bangalore",
+    text: "What sets LNPR apart is the skin-in-the-game philosophy. They invest in the same stocks they recommend. That alignment of interests gives me genuine confidence when I make a position. Two multibaggers in my first year of subscription. The team is always accessible and responds promptly to any query.",
+  },
+  {
+    avatar: "A",
+    name: "Anand K.",
+    designation: "Senior Executive",
+    location: "Delhi NCR",
+    text: "I've subscribed to multiple research services over the years. LNPR is the only one that proactively sends exit calls with a clear rationale when the thesis breaks. That discipline alone has saved me significant capital. Their long-term orientation and honest communication are rare in this industry.",
+  },
+  {
+    avatar: "V",
+    name: "Vikram S.",
+    designation: "Entrepreneur",
+    location: "Ahmedabad",
+    text: "The SME Master Club has been a revelation. These are companies that no large broker covers - yet the fundamental quality is exceptional. LNPR finds them early, explains the thesis in plain language, and tracks them diligently. I have found several high-conviction positions through their research that I would never have discovered on my own.",
+  },
+  {
+    avatar: "P",
+    name: "Priya N.",
+    designation: "Doctor & Investor",
+    location: "Pune",
+    text: "I was initially sceptical about paying for research - but the very first report I received changed my mind. The depth of analysis, the forensic financial checks, and the management quality assessment were unlike anything I had seen before. As a busy professional, having a trusted research partner has been invaluable.",
+  },
+  {
+    avatar: "M",
+    name: "Manish T.",
+    designation: "CA & Investor",
+    location: "Kolkata",
+    text: "LNPR has genuinely changed how I approach investing. The regular communication, the transparent acknowledgment when a thesis is wrong, and the long-term orientation have made me a more patient and disciplined investor. As a CA, I appreciate their rigour around financial forensics and quality of earnings analysis.",
+  },
+];
 
 export default function Home() {
   const [openAccItems, setOpenAccItems] = useState([true, false, false]);
@@ -20,26 +182,33 @@ export default function Home() {
     false,
     false,
   ]);
+  const [caseStudyFilter, setCaseStudyFilter] = useState("all");
+  const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(null);
+  const testimonialTrackRef = useRef(null);
 
   const toggleAcc = (index) => {
     setOpenAccItems((prev) =>
-      prev.map((isOpen, itemIndex) =>
-        itemIndex === index ? !isOpen : isOpen
-      )
+      prev.map((isOpen, itemIndex) => (itemIndex === index ? !isOpen : isOpen)),
     );
   };
 
   const toggleFaq = (index) => {
     setOpenFaqItems((prev) =>
-      prev.map((isOpen, itemIndex) =>
-        itemIndex === index ? !isOpen : isOpen
-      )
+      prev.map((isOpen, itemIndex) => (itemIndex === index ? !isOpen : isOpen)),
     );
   };
 
+  const visibleCaseStudies = CASE_STUDIES.filter(
+    ({ status }) => caseStudyFilter === "all" || status === caseStudyFilter,
+  );
+  const activeTestimonial =
+    activeTestimonialIndex === null
+      ? null
+      : TESTIMONIALS[activeTestimonialIndex];
+
   useEffect(() => {
     const revealTargets = document.querySelectorAll(
-      ".why-card, .svc-card, .belief-item, .who-pillar"
+      ".why-card, .svc-card, .belief-item, .who-pillar, .cs-card, .testi-slide",
     );
 
     if (!revealTargets.length) {
@@ -70,7 +239,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     revealTargets.forEach((element) => observer.observe(element));
@@ -78,130 +247,51 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setActiveTestimonialIndex(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (activeTestimonialIndex === null) {
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [activeTestimonialIndex]);
+
+  const openTestimonialModal = (index) => {
+    setActiveTestimonialIndex(index);
+  };
+
+  const closeTestimonialModal = () => {
+    setActiveTestimonialIndex(null);
+  };
+
+  const scrollTestimonials = (direction) => {
+    testimonialTrackRef.current?.scrollBy({
+      left: direction * 304,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
-      <Head>
-        {/* Basic Meta */}
-        <meta charSet="utf-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {/* SEO */}
-        <title>LNPR Capital | Investment & Financial Advisory</title>
-        <meta
-          name="description"
-          content="LNPR Capital is a trusted financial and investment advisory firm providing strategic capital solutions and growth-focused portfolio management."
-        />
-        <meta name="author" content="LNPR Capital" />
-        <meta name="robots" content="index, follow" />
-
-        {/* (Optional) Keywords – low impact but safe */}
-        <meta
-          name="keywords"
-          content="LNPR Capital, Financial Services, Investment Advisory, Portfolio Management, Capital Solutions"
-        />
-
-        {/* Favicon */}
-        <link rel="icon" href="/favicon-2.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-        {/* Open Graph */}
-        <meta
-          property="og:title"
-          content="LNPR Capital | Investment & Financial Advisory"
-        />
-        <meta
-          property="og:description"
-          content="Strategic capital solutions and expert financial advisory services by LNPR Capital."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.lnprcapital.com" />
-        <meta
-          property="og:image"
-          content="https://www.lnprcapital.com/og-image.jpg"
-        />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="LNPR Capital | Investment & Financial Advisory"
-        />
-        <meta
-          name="twitter:description"
-          content="Expert investment and financial advisory services by LNPR Capital."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.lnprcapital.com/og-image.jpg"
-        />
-
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
-          rel="stylesheet"
-        /> */}
-      </Head>
       <main>
-        {/* TOPBAR */}
-        <div className="topbar">
-          <span>
-            SEBI Registered Research Analyst · Reg No:{" "}
-            <strong>INH000012953</strong> · BSE Enlistment:{" "}
-            <strong>5843</strong>
-          </span>
-          <span>
-            📞 <a href="tel:+916290500733">+91 6290500733</a> &nbsp;|&nbsp; ✉{" "}
-            <a href="/cdn-cgi/l/email-protection#60090e060f200c0e10120301100914010c4e030f0d">
-              <span
-                className="__cf_email__"
-                data-cfemail="fa93949c95ba96948a88999b8a938e9b96d4999597"
-              >
-                info@lnprcapital.com
-              </span>
-            </a>
-          </span>
-        </div>
-
-        {/* NAV */}
-        <nav>
-          <a href="#" className="nav-logo">
-            <div className="nav-logo-icon">
-              <img src="/images/logo.svg" alt="LNPR Capital" />
-            </div>
-            <div className="nav-logo-text">
-              LNPR Capital
-            </div>
-          </a>
-          <ul className="nav-links">
-            <li>
-              <a href="#who">Who We Are</a>
-            </li>
-            <li>
-              <a href="#why">Why LNPR</a>
-            </li>
-            <li>
-              <a href="#services">Services</a>
-            </li>
-            <li>
-              <a href="#beliefs">Our Beliefs</a>
-            </li>
-            <li>
-              <a href="#faqs">FAQs</a>
-            </li>
-            <li>
-              <a href="#services" className="nav-cta">
-                Subscribe
-              </a>
-            </li>
-          </ul>
-        </nav>
-
         {/* HERO */}
         <section className="hero">
           <div className="hero-noise"></div>
@@ -209,7 +299,8 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-tag">A Boutique Research House</div>
             <h1 className="hero-title">
-              Helping Serious Investors<br></br>
+              Helping Serious Investors
+              <br />
               Build <em>Sustainable Wealth,</em>
               <span className="sub">The Right Way — With Skin in the Game</span>
             </h1>
@@ -229,16 +320,16 @@ export default function Home() {
             </div>
             <div className="hero-stats">
               <div className="hero-stat">
-                <span className="n">12–15</span>
-                <span className="l">Annual Ideas</span>
+                <span className="n">100+</span>
+                <span className="l">Stocks Released</span>
               </div>
               <div className="hero-stat">
                 <span className="n">SEBI</span>
                 <span className="l">Registered RA</span>
               </div>
               <div className="hero-stat">
-                <span className="n">1–2yr</span>
-                <span className="l">Holding Period</span>
+                <span className="n">2000+</span>
+                <span className="l">Clients Served</span>
               </div>
               <div className="hero-stat">
                 <span className="n">100%</span>
@@ -250,8 +341,10 @@ export default function Home() {
             <div className="sebi-box">
               <h4>Regulatory Details</h4>
               <p>
-                <strong>SEBI Reg No:</strong> INH000012953<br></br>
-                <strong>BSE Enlistment:</strong> 5843<br></br>
+                <strong>SEBI Reg No:</strong> INH000012953
+                <br />
+                <strong>BSE Enlistment:</strong> 5843
+                <br />
                 <strong>GST No:</strong> 19AAKFL6398J1ZG
               </p>
             </div>
@@ -326,11 +419,17 @@ export default function Home() {
         {/* WHY LNPR */}
         <section className="why" id="why">
           <div className="section-header">
-            <div className="section-eyebrow" style={{ color: "var(--gold-lt)" }}>
+            <div
+              className="section-eyebrow"
+              style={{ color: "var(--gold-lt)" }}
+            >
               Why LNPR Capital
             </div>
             <h2 className="section-title white">What Makes Us Different</h2>
-            <p className="section-sub" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <p
+              className="section-sub"
+              style={{ color: "rgba(255,255,255,0.4)" }}
+            >
               Principles that define how we think, research, and serve our
               clients.
             </p>
@@ -354,8 +453,8 @@ export default function Home() {
                 must bring data."
               </p>
             </div>
-            
-            <div className="why-card">
+
+            {/* <div className="why-card">
               <div className="why-num">03</div>
               <h3>Your Money in Your Hands</h3>
               <p>
@@ -363,16 +462,19 @@ export default function Home() {
                 remain the decision maker. We are a trusted conduit, never a
                 custodian.
               </p>
-            </div>
-            
+            </div> */}
+
             <div className="why-card">
-              <div className="why-num">04</div>
+              <div className="why-num">03</div>
               <h3>Your Capital, Your Control</h3>
               <p>
-                Your funds always remain securely in your own bank account and demat account. You retain complete ownership and decision-making authority, while we serve only as your trusted advisor — never a custodian.
+                Your funds always remain securely in your own bank account and
+                demat account. You retain complete ownership and decision-making
+                authority, while we serve only as your trusted advisor — never a
+                custodian.
               </p>
             </div>
-            <div className="why-card">
+            {/* <div className="why-card">
               <div className="why-num">05</div>
               <h3>Exit is as Important as Entry</h3>
               <p>
@@ -380,9 +482,9 @@ export default function Home() {
                 each position and provide timely, clear exit calls whenever
                 fundamentals change.
               </p>
-            </div>
+            </div> */}
             <div className="why-card">
-              <div className="why-num">06</div>
+              <div className="why-num">04</div>
               <h3>Deep Fundamental Research</h3>
               <p>
                 Our analysts go beyond screeners. On-ground research, management
@@ -391,10 +493,11 @@ export default function Home() {
               </p>
             </div>
             <div className="why-card">
-              <div className="why-num">07</div>
+              <div className="why-num">05</div>
               <h3>Exit is Important</h3>
               <p>
-                Each investment is actively monitored, and we provide timely exit recommendations whenever the fundamentals change.
+                Each investment is actively monitored, and we provide timely
+                exit recommendations whenever the fundamentals change.
               </p>
             </div>
           </div>
@@ -553,6 +656,118 @@ export default function Home() {
           </div>
         </section>
 
+        {/* CASE STUDIES */}
+
+        {/* <section className="casestudies" id="casestudies">
+          <div className="section-header">
+            <div className="section-eyebrow" style={{ color: "var(--gold-lt)" }}>
+              Research in Action
+            </div>
+            <h2 className="section-title white">Case Studies</h2>
+            <div className="cs-disclaimer">
+              The securities quoted below are only for illustration purposes and
+              are not recommendations.
+            </div>
+          </div>
+
+          <div className="cs-filters">
+            {CASE_STUDY_FILTERS.map((filter) => (
+              <button
+                key={filter.value}
+                type="button"
+                className={`cs-filter${caseStudyFilter === filter.value ? " active" : ""}`}
+                onClick={() => setCaseStudyFilter(filter.value)}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="cs-grid">
+            {visibleCaseStudies.map((caseStudy) => (
+              <div
+                key={caseStudy.title}
+                className="cs-card"
+                data-status={caseStudy.status}
+              >
+                <div className="cs-card-head">
+                  <div className="cs-status-row">
+                    <span className={`cs-status ${caseStudy.status}`}>
+                      {caseStudy.status === "holding" ? "● Holding" : "✓ Exited"}
+                    </span>
+                    <span className="cs-sector">{caseStudy.sector}</span>
+                  </div>
+                  <h3>{caseStudy.title}</h3>
+                  <p className="cs-reco">
+                    Reco Price: <strong>{caseStudy.recoPrice}</strong>
+                    {caseStudy.exitPrice ? (
+                      <>
+                        {" "}
+                        &nbsp;·&nbsp; Exited at <strong>{caseStudy.exitPrice}</strong>
+                      </>
+                    ) : null}
+                  </p>
+                </div>
+                <div className="cs-card-body">
+                  <p className="cs-thesis">{caseStudy.thesis}</p>
+                  <div className="cs-metrics">
+                    {caseStudy.metrics.map((metric) => (
+                      <div
+                        key={`${caseStudy.title}-${metric.label}`}
+                        className="cs-metric"
+                      >
+                        <span className="mv">{metric.value}</span>
+                        <span className="ml">{metric.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div
+                    className="cs-return"
+                    style={
+                      caseStudy.status === "exited"
+                        ? EXITED_CASE_STUDY_RETURN_STYLE
+                        : undefined
+                    }
+                  >
+                    <span className="label">{caseStudy.returnLabel}</span>
+                    <span
+                      className="value"
+                      style={
+                        caseStudy.status === "exited"
+                          ? EXITED_CASE_STUDY_VALUE_STYLE
+                          : undefined
+                      }
+                    >
+                      {caseStudy.returnValue}
+                      {caseStudy.returnNote ? (
+                        <>
+                          {" "}
+                          <small style={CASE_STUDY_NOTE_STYLE}>
+                            {caseStudy.returnNote}
+                          </small>
+                        </>
+                      ) : null}
+                    </span>
+                  </div>
+                </div>
+                <div className="cs-card-foot">
+                  <a href="#" className="cs-btn">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" />
+                    </svg>
+                    Download Full Report
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section> */}
+
         {/* OUR BELIEFS */}
         <section className="beliefs" id="beliefs">
           <div className="beliefs-layout">
@@ -571,12 +786,13 @@ export default function Home() {
               ></div>
               <div className="beliefs-intro">
                 <p>
-                  Principles shaped by years of investing — lessons learned and shared with honesty.
+                  Principles shaped by years of investing — lessons learned and
+                  shared with honesty.
                 </p>
               </div>
             </div>
             <div className="beliefs-grid">
-              <div className="belief-item">
+              <div className="belief-item" style={{paddingTop:'0'}}>
                 <div className="belief-num">01</div>
                 <div className="belief-content">
                   <h3>Risk Before Returns</h3>
@@ -586,7 +802,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="belief-item">
+              {/* <div className="belief-item">
                 <div className="belief-num">02</div>
                 <div className="belief-content">
                   <h3>Conviction Must Be Earned</h3>
@@ -595,9 +811,9 @@ export default function Home() {
                     your own research.
                   </p>
                 </div>
-              </div>
+              </div> */}
               <div className="belief-item">
-                <div className="belief-num">03</div>
+                <div className="belief-num">02</div>
                 <div className="belief-content">
                   <h3>Boring Compounds Best</h3>
                   <p>
@@ -606,7 +822,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="belief-item">
+              {/* <div className="belief-item">
                 <div className="belief-num">04</div>
                 <div className="belief-content">
                   <h3>Develop a Circle of Competence</h3>
@@ -615,9 +831,9 @@ export default function Home() {
                     expertise.
                   </p>
                 </div>
-              </div>
+              </div> */}
               <div className="belief-item">
-                <div className="belief-num">05</div>
+                <div className="belief-num">03</div>
                 <div className="belief-content">
                   <h3>Rejection Builds Wealth</h3>
                   <p>
@@ -626,7 +842,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="belief-item">
+              {/* <div className="belief-item">
                 <div className="belief-num">06</div>
                 <div className="belief-content">
                   <h3>Ignore Daily Noise</h3>
@@ -635,9 +851,9 @@ export default function Home() {
                     short-term price movements.
                   </p>
                 </div>
-              </div>
+              </div> */}
               <div className="belief-item">
-                <div className="belief-num">07</div>
+                <div className="belief-num">04</div>
                 <div className="belief-content">
                   <h3>Research Builds Conviction</h3>
                   <p>
@@ -659,7 +875,7 @@ export default function Home() {
             </p>
           </div>
           <div className="acc-wrap">
-            <div className={`acc-item${openAccItems[0] ? " open" : ""}`}>
+            <div className="acc-item">
               <button
                 type="button"
                 className="acc-trigger"
@@ -937,6 +1153,111 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TESTIMONIALS */}
+        {/* <section className="testimonials" id="testimonials">
+          <div className="section-header">
+            <div className="section-eyebrow">Client Stories</div>
+            <h2 className="section-title">What Our Clients Say</h2>
+            <p
+              className="section-sub"
+              style={{ color: "rgba(255,255,255,0.4)" }}
+            >
+              Heard directly from serious investors who have been part of the
+              LNPR Capital journey.
+            </p>
+          </div>
+
+          <div className="testi-track-wrap">
+            <div className="testi-track" id="testiTrack" ref={testimonialTrackRef}>
+              {TESTIMONIALS.map((testimonial, index) => (
+                <div
+                  key={testimonial.name}
+                  className="testi-slide"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => openTestimonialModal(index)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      openTestimonialModal(index);
+                    }
+                  }}
+                >
+                  <div className="testi-photo">{testimonial.avatar}</div>
+                  <h4>{testimonial.name}</h4>
+                  <p className="testi-desig">
+                    {testimonial.designation}
+                    <br />
+                    {testimonial.location}
+                  </p>
+                  <button
+                    type="button"
+                    className="testi-know-more"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      openTestimonialModal(index);
+                    }}
+                  >
+                    Know More
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            <div className="testi-nav">
+              <button
+                type="button"
+                className="testi-nav-btn"
+                aria-label="Scroll testimonials left"
+                onClick={() => scrollTestimonials(-1)}
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                className="testi-nav-btn"
+                aria-label="Scroll testimonials right"
+                onClick={() => scrollTestimonials(1)}
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </section> */}
+
+        <div
+          className={`testi-modal-overlay${activeTestimonial ? " active" : ""}`}
+          aria-hidden={!activeTestimonial}
+          onClick={closeTestimonialModal}
+        >
+          {activeTestimonial ? (
+            <div
+              className="testi-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="testimonial-modal-name"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                className="testi-modal-close"
+                aria-label="Close testimonial"
+                onClick={closeTestimonialModal}
+              >
+                ✕
+              </button>
+              <div className="testi-modal-photo">{activeTestimonial.avatar}</div>
+              <h3 id="testimonial-modal-name">{activeTestimonial.name}</h3>
+              <p className="modal-desig">
+                {activeTestimonial.designation}, {activeTestimonial.location}
+              </p>
+              <div className="testi-modal-divider"></div>
+              <span className="testi-modal-quote">"</span>
+              <p className="testi-modal-text">{activeTestimonial.text}</p>
+            </div>
+          ) : null}
+        </div>
+
         {/* FAQs */}
         <section className="faqs" id="faqs">
           <div className="faqs-inner">
@@ -948,7 +1269,6 @@ export default function Home() {
                 believe in transparent communication — here are the questions we
                 hear most often.
               </p>
-              
             </div>
             <div className="faq-list">
               <div className={`faq-item${openFaqItems[0] ? " open" : ""}`}>
@@ -1009,7 +1329,8 @@ export default function Home() {
                   className="faq-q"
                   onClick={() => toggleFaq(3)}
                 >
-                  What returns should I expect?<span className="faq-icon">+</span>
+                  What returns should I expect?
+                  <span className="faq-icon">+</span>
                 </button>
                 <div className="faq-a">
                   We seek long-term capital appreciation over 1–2 year horizons.
@@ -1052,153 +1373,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FOOTER */}
-        <footer>
-          <div className="footer-top">
-            <div className="footer-brand">
-              <span className="logo-f">LNPR Capital</span>
-              <span className="tagline-f">A Boutique Research House</span>
-              <p>
-                We aim to be a trustworthy, reliable, and professional equity
-                research organisation for serious Indian investors — with
-                data-backed actionable ideas as our key differentiator.
-              </p>
-              <div className="reg-chips">
-                <div className="reg-chip">
-                  <strong>SEBI Registration</strong>INH000012953
-                </div>
-                <div className="reg-chip">
-                  <strong>BSE Enlistment</strong>5843
-                </div>
-                <div className="reg-chip">
-                  <strong>GST Number</strong>19AAKFL6398J1ZG
-                </div>
-              </div>
-            </div>
-            <div className="footer-col">
-              <h4>Useful Links</h4>
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#who">Who We Are</a>
-                </li>
-                <li>
-                  <a href="#services">Products & Pricing</a>
-                </li>
-                <li>
-                  <a href="#faqs">FAQs & Contact</a>
-                </li>
-                <li>
-                  <a href="#beliefs">Our Beliefs</a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-col">
-              <h4>Important Info</h4>
-              <ul>
-                <li>
-                  <a href="#">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="#">Terms & Conditions</a>
-                </li>
-                <li>
-                  <a href="#">Refund Policy</a>
-                </li>
-                <li>
-                  <a href="#">Disclaimer</a>
-                </li>
-                <li>
-                  <a href="#">Investor Charter</a>
-                </li>
-                <li>
-                  <a href="#">Grievance Redressal</a>
-                </li>
-                <li>
-                  <a href="#">Escalation Matrix</a>
-                </li>
-                <li>
-                  <a href="https://smartodr.in/login" target="_blank">
-                    SMART ODR Portal
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-col">
-              <h4>Contact Us</h4>
-              <div className="footer-contact-item">
-                <span className="ic">📍</span>
-                <p>
-                  17, Subhash Nagar, 1st Bye Lane, Dumdum Cantonment, Kolkata –
-                  700065
-                </p>
-              </div>
-              <div className="footer-contact-item">
-                <span className="ic">📞</span>
-                <p>
-                  <a href="tel:+916290500733">+91 6290500733</a>
-                  <br></br>
-                  <a href="tel:+91 9874483593">+91 9874483593</a>
-                </p>
-              </div>
-              <div className="footer-contact-item">
-                <span className="ic">✉</span>
-                <p>
-                  <a href="/cdn-cgi/l/email-protection#0960676f66496567797b6a6879607d6865276a6664">
-                    <span
-                      className="__cf_email__"
-                      data-cfemail="4e272028210e22203e3c2d2f3e273a2f22602d2123"
-                    >
-                      info@lnprcapital.com
-                    </span>
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              background: "rgba(255,255,255,0.03)",
-              border: "1px solid rgba(255,255,255,0.06)",
-              padding: "20px 0 20px 28px",
-              margin: "0 -60px",
-              paddingLeft: "60px",
-              paddingRight: "60px",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "12px",
-                color: "rgba(255,255,255,0.3)",
-                lineHeight: "1.8",
-              }}
-            >
-              "Investment in Securities Market are subject to market risks. Read
-              all related documents carefully before investing. Registration
-              granted by SEBI and certification from NISM in no way guarantee
-              performance of the intermediary or provide any assurance of
-              returns to investors. The securities quoted are for illustration
-              only and are not recommendatory."
-            </p>
-          </div>
-          <div className="footer-bottom">
-            <p>
-              © 2026 LNPR Capital. All rights reserved. SEBI Reg No:
-              INH000012953
-            </p>
-            <div style={{ display: "flex", gap: "20px" }}>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms & Conditions</a>
-              <a href="#">Disclaimer</a>
-            </div>
-          </div>
-        </footer>
-
-        <a href="https://wa.me/916290500733" className="wa-float" target="_blank">
-          💬
-        </a>
       </main>
     </>
   );

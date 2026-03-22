@@ -19,7 +19,7 @@ export default function NotFound() {
             Go home
           </Link>
           <Link
-            href="/contact-us"
+            href="/contact"
             className="inline-block border border-gray-300 px-6 py-2 rounded-md"
           >
             Contact support

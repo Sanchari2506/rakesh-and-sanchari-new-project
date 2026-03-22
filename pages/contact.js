@@ -5,7 +5,7 @@ export default function ContactUs() {
       <p className="text-gray-600 text-center">
         If you have any questions or need assistance, please don't hesitate to reach out to us. We'll be happy to help.
       </p>
-      <form action="/contact-us" method="POST" className="mt-4 space-y-4 w-[60%] max-w-7xl mx-auto">
+      <form action="/contact" method="POST" className="mt-4 space-y-4 w-[60%] max-w-7xl mx-auto">
         <div className="grid grid-cols-1 gap-4">
           <label className="block">
             <span className="text-gray-700">Name</span>

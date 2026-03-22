@@ -2,7 +2,6 @@ import styles from "./Footer.module.css";
 import { FaLinkedin, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
-
 export default function Footer() {
   // Dynamic menu for quick editing later
   const menuLinks = [
@@ -16,91 +15,152 @@ export default function Footer() {
   ];
 
   return (
-    <footer className={styles.footer}>
-      <div className="footer-contents bg-[#0a3758] w-full text-white">
-        {/* TOP SECTION */}
-        <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Quick Links */}
-          <div className="quick-links-wrapper">
-            <h2 className="text-lg font-semibold mb-3">Quick Links</h2>
-            <ul className="space-y-2">
-              {menuLinks.map((item, index) => (
-                <li key={index}>
-                  <a href={item.href} className="hover:underline">
-                    {item.label}
-                  </a>
+    <>
+      {/* FOOTER */}
+      <footer>
+        <div className="footer-top">
+          <div className="footer-brand">
+            <span className="logo-f">LNPR Capital</span>
+            <span className="tagline-f">A Boutique Research House</span>
+            <p>
+              We aim to be a trustworthy, reliable, and professional equity
+              research organisation for serious Indian investors — with
+              data-backed actionable ideas as our key differentiator.
+            </p>
+            <div className="reg-chips">
+              <div className="reg-chip">
+                <strong>SEBI Registration</strong>INH000012953
+              </div>
+              <div className="reg-chip">
+                <strong>BSE Enlistment</strong>5843
+              </div>
+              <div className="reg-chip">
+                <strong>GST Number</strong>19AAKFL6398J1ZG
+              </div>
+            </div>
+          </div>
+          {/* <div className="footer-col">
+              <h4>Useful Links</h4>
+              <ul>
+                <li>
+                  <a href="#">Home</a>
                 </li>
-              ))}
+                <li>
+                  <a href="#who">Who We Are</a>
+                </li>
+                <li>
+                  <a href="#services">Products & Pricing</a>
+                </li>
+                <li>
+                  <a href="#faqs">FAQs & Contact</a>
+                </li>
+                <li>
+                  <a href="#beliefs">Our Beliefs</a>
+                </li>
+              </ul>
+            </div> */}
+          <div className="footer-col">
+            <h4>Important Info</h4>
+            <ul>
+              <li>
+                <a href="/privacy-policy">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="/terms-and-conditions">Terms & Conditions</a>
+              </li>
+              {/* <li>
+                <a href="/refund-policy">Refund Policy</a>
+              </li> */}
+              <li>
+                <a href="/disclaimer">Disclaimer</a>
+              </li>
+              <li>
+                <a href="/investor-charter">Investor Charter</a>
+              </li>
+              <li>
+                <a href="/grievance-redressal">Grievance Redressal</a>
+              </li>
+              {/* <li>
+                  <a href="/escalation-matrix">Escalation Matrix</a>
+                </li> */}
+              <li>
+                <a href="https://smartodr.in/login" target="_blank">
+                  SMART ODR Portal
+                </a>
+              </li>
             </ul>
           </div>
-
-          {/* Company Information */}
-          <div className="company-info-wrapper">
-            <h2 className="text-lg font-semibold mb-3">Company Information</h2>
-            <p>
-              GST No: <strong>19AAKFL6398J1ZG</strong>
-            </p>
-            <p>
-              SEBI Registration No: <strong>INH000012953</strong>
-            </p>
-            <p>
-              BSE ENLISTMENT No: <strong>5843</strong>
-            </p>
-
-            <div className="mt-4 space-y-1">
-              <p>17, Subhash Nagar, 1st Bye Lane,</p>
-              <p>Dumdum Cantonment,</p>
-              <p>Kolkata - 700065</p>
+          <div className="footer-col">
+            <h4>Contact Us</h4>
+            <div className="footer-contact-item">
+              <span className="ic">📍</span>
+              <p>
+                17, Subhash Nagar, 1st Bye Lane, Dumdum Cantonment, Kolkata –
+                700065
+              </p>
             </div>
-
-            <div className="mt-4 space-y-1">
-              <p>Phone: +91 6290500733 / +91 6291136628</p>
-              <p>Email: info@lnprcapital.com</p>
+            <div className="footer-contact-item">
+              <span className="ic">📞</span>
+              <p>
+                <a href="tel:+916290500733">+91 6290500733</a>
+                <br />
+                <a href="tel:+91 9874483593">+91 9874483593</a>
+              </p>
             </div>
-          </div>
-          {/* Company Logo */}
-          <div className="footer-logo-wrapper">
-            <img
-              src="/images/footerlogo.png"
-              alt="LNPR Capital Logo"
-              className="h-auto w-auto"
-            />
-            <div className="company-social-media-wrapper flex flex-row space-x-3 mt-9">
-              <a href="#" className="cursor-pointer" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={32} />
-              </a>
-              <a href="#" className="cursor-pointer" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={32} />
-              </a>
-              <a href="#" className="cursor-pointer" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-                <FaTwitter size={32} />
-              </a>
-              <a href="#" className="cursor-pointer" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-                <FaYoutube size={32} />
-              </a>
+            <div className="footer-contact-item">
+              <span className="ic">✉</span>
+              <p>
+                <a href="/cdn-cgi/l/email-protection#0960676f66496567797b6a6879607d6865276a6664">
+                  <span
+                    className="__cf_email__"
+                    data-cfemail="4e272028210e22203e3c2d2f3e273a2f22602d2123"
+                  >
+                    info@lnprcapital.com
+                  </span>
+                </a>
+              </p>
             </div>
           </div>
         </div>
-        {/* BOTTOM SECTION */}
-        <div className="footer-bottom border-t border-gray-700 pt-4 text-center">
-          {/* Disclaimer */}
-          <div className="mb-4 w-[80%] mx-auto bg-[#ffffff33] p-4 rounded-xl">
-            <h2 className="text-lg font-semibold mb-3">Disclaimer</h2>
-            <p className="text-sm leading-relaxed opacity-80">
-              Investment in Securities Market are subject to market risks. Read
-              all related documents carefully before investing. Registration
-              granted by SEBI and certification from NISM in no way guarantee
-              performance of the intermediary or provide any assurance of
-              returns to investors. The securities quoted are for illustration
-              only and are not recommendatory.
-            </p>
-          </div>
-          {/* FOOTER BOTTOM */}
-          <p className="text-center text-white py-3 border-t border-gray-700">
-            © {new Date().getFullYear()} LNPR Capital. All rights reserved.
+        <div
+          style={{
+            background: "rgba(255,255,255,0.03)",
+            border: "1px solid rgba(255,255,255,0.06)",
+            padding: "20px 0 20px 28px",
+            margin: "0 -60px",
+            paddingLeft: "60px",
+            paddingRight: "60px",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "12px",
+              color: "rgba(255,255,255,0.3)",
+              lineHeight: "1.8",
+            }}
+          >
+            "Investment in Securities Market are subject to market risks. Read
+            all related documents carefully before investing. Registration
+            granted by SEBI and certification from NISM in no way guarantee
+            performance of the intermediary or provide any assurance of returns
+            to investors. The securities quoted are for illustration only and
+            are not recommendatory."
           </p>
         </div>
-      </div>
-    </footer>
+        <div className="footer-bottom">
+          <p>
+            © 2026 LNPR Capital. All rights reserved. SEBI Reg No: INH000012953
+          </p>
+        </div>
+      </footer>
+      <a
+        href="https://wa.me/916290500733"
+        className="wa-float"
+        target="_blank"
+        rel="noreferrer"
+      >
+        💬
+      </a>
+    </>
   );
 }
