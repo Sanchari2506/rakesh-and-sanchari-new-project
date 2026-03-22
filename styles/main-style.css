@@ -23,7 +23,7 @@ body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);ov
 .topbar strong{color:rgba(255,255,255,0.8);}
 
 /* ── NAV ── */
-nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:72px;position:sticky;top:0;z-index:200;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:72px;position:relative;top:0;z-index:200;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
 .nav-logo-icon{display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;}
 .nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1.1;}
@@ -108,8 +108,8 @@ h1.hero-title .sub{display:block;font-size:clamp(18px,2.5vw,30px);font-weight:40
 .why-card:hover{background:rgba(184,145,42,0.06);}
 .why-card:hover::before{transform:scaleX(1);}
 .why-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:rgba(184,145,42,0.2);line-height:1;margin-bottom:16px;}
-.why-card h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:12px;line-height:1.4;}
-.why-card p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.75;}
+.why-card h3{font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:12px;line-height:1.4;}
+.why-card p{font-family:'Outfit',sans-serif;font-size:13px;color:rgba(255,255,255,0.45);line-height:1.75;}
 
 /* ── SERVICES ── */
 .services{background:var(--warm-gray);padding:60px 60px;}
@@ -120,7 +120,7 @@ h1.hero-title .sub{display:block;font-size:clamp(18px,2.5vw,30px);font-weight:40
 .svc-card-top::after{content:'';position:absolute;right:-30px;top:-30px;width:120px;height:120px;border:1px solid rgba(184,145,42,0.2);border-radius:50%;}
 .svc-card-top::before{content:'';position:absolute;right:10px;top:10px;width:70px;height:70px;border:1px solid rgba(184,145,42,0.15);border-radius:50%;}
 .svc-badge{display:inline-block;border:1px solid rgba(184,145,42,0.4);color:var(--gold-lt);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;margin-bottom:20px;}
-.svc-card-top h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.svc-card-top h2{font-family:'Poppins',sans-serif;font-size:30px;font-weight:600;color:var(--white);margin-bottom:8px;}
 .svc-tagline{font-size:13px;color:rgba(255,255,255,0.4);}
 .svc-body{padding:36px 40px;}
 .svc-features{list-style:none;margin-bottom:28px;}

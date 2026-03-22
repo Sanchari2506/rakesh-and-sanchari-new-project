@@ -1,10 +1,10 @@
 import "@styles/globals.css";
 import "@styles/main-style.css";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import Layout from "@components/Layout";
 import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+// const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 function Application({ Component, pageProps }) {
   return (
@@ -65,7 +65,7 @@ function Application({ Component, pageProps }) {
           content="https://www.lnprcapital.com/og-image.jpg"
         />
 
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -74,9 +74,9 @@ function Application({ Component, pageProps }) {
         <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
           rel="stylesheet"
-        /> */}
+        />
       </Head>
-      <div className={inter.className}>
+      <div className={`app-container`}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
