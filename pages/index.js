@@ -173,7 +173,7 @@ const TESTIMONIALS = [
 ];
 
 export default function Home() {
-  const [openAccItems, setOpenAccItems] = useState([true, false, false]);
+  const [openAccItems, setOpenAccItems] = useState([false, false, false]);
   const [openFaqItems, setOpenFaqItems] = useState([
     true,
     false,
@@ -875,7 +875,7 @@ export default function Home() {
             </p>
           </div>
           <div className="acc-wrap">
-            <div className="acc-item">
+            <div className={`acc-item${openAccItems[0] ? " open" : ""}`}>
               <button
                 type="button"
                 className="acc-trigger"
