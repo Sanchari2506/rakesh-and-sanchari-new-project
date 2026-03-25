@@ -92,7 +92,7 @@ h1.hero-title .sub{display:block;font-size:clamp(18px,2.5vw,30px);font-weight:40
 .who-img-block{background:var(--warm-gray);height:480px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden;}
 .who-img-block img{width:100%;height:100%;object-fit:cover;}
 .who-img-badge{position:absolute;bottom:-20px;right:-20px;background:var(--ink);color:var(--white);padding:24px;width:160px;text-align:center;}
-.who-img-badge .num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1;}
+.who-img-badge .num{font-family:'Outfit',sans-serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1;}
 .who-img-badge .txt{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;}
 .who-text p{font-size:16px;line-height:1.9;color:var(--mid-gray);margin-bottom:20px;}
 .who-text p strong{color:var(--ink);}
@@ -333,6 +333,7 @@ footer{background:var(--ink);padding:80px 60px 0;border-top:3px solid var(--gold
 
     .cs-reco strong {
         color: rgba(255, 255, 255, 0.65);
+        font-family: "Poppins", sans-serif;
     }
 
     .cs-card-body {
@@ -360,7 +361,7 @@ footer{background:var(--ink);padding:80px 60px 0;border-top:3px solid var(--gold
     }
 
     .cs-metric .mv {
-        font-family: 'Outfit', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 20px;
         font-weight: 700;
         color: var(--gold);
@@ -396,7 +397,7 @@ footer{background:var(--ink);padding:80px 60px 0;border-top:3px solid var(--gold
     }
 
     .cs-return .value {
-        font-family: 'Outfit', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 22px;
         font-weight: 700;
         color: var(--gold-lt);

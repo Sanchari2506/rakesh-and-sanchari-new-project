@@ -8,109 +8,148 @@ const CASE_STUDY_FILTERS = [
   { value: "exited", label: "Exited" },
 ];
 
+/* 
+Exited                Metals & Mining
+Ashapura Minechem Ltd
+Reco Price: ₹370 / share • Exited at ₹730
+
+Leading Indian mineral company based in Mumbai.
+It produces and exports minerals like bentonite & bauxite. 
+The company serves industries such as oil, steel, and construction worldwide.
+
+46%.                                   65%
+Revenue CAGR          PAT CAGR
+
+23%                                  13
+ROE 5yrs                     P/E At Exit
+
+RETURNS DELIVERED  97% in 08 months
+
+*/
+
 const CASE_STUDIES = [
   {
-    title: "ABC Engineering Ltd",
-    status: "holding",
-    sector: "Auto Ancillary",
-    recoPrice: "₹XXX / share",
-    thesis:
-      "A diversified engineering company with vertically integrated manufacturing capabilities, benefitting from India's manufacturing supercycle and strong order inflows across automotive and aerospace segments.",
-    metrics: [
-      { value: "XX%", label: "Revenue CAGR" },
-      { value: "XX%", label: "PAT CAGR" },
-      { value: "XX%", label: "RoCE" },
-      { value: "XXx", label: "P/E (FY25e)" },
-    ],
-    returnLabel: "Target Price",
-    returnValue: "₹XXX",
-  },
-  {
-    title: "XYZ Chemicals Ltd",
-    status: "holding",
-    sector: "Specialty Chemicals",
-    recoPrice: "₹XXX / share",
-    thesis:
-      "A specialty chemicals player with strong export visibility and expanding capacity. China+1 tailwind driving incremental order wins; management has strong execution track record across business cycles.",
-    metrics: [
-      { value: "XX%", label: "EBITDA Margin" },
-      { value: "XX%", label: "Export Mix" },
-      { value: "₹XXCr", label: "Capex Pipeline" },
-      { value: "XXx", label: "EV/EBITDA" },
-    ],
-    returnLabel: "Target Price",
-    returnValue: "₹XXX",
-  },
-  {
-    title: "PQR Consumer Ltd",
-    status: "holding",
-    sector: "Consumer Goods",
-    recoPrice: "₹XXX / share",
-    thesis:
-      "An under-the-radar consumer brand with dominant regional presence, transitioning to a national footprint. Asset-light model with high cash generation and zero debt provides significant margin of safety.",
-    metrics: [
-      { value: "XX%", label: "Revenue CAGR" },
-      { value: "XX%", label: "RoE" },
-      { value: "Zero", label: "Net Debt" },
-      { value: "XXx", label: "P/E (FY25e)" },
-    ],
-    returnLabel: "Target Price",
-    returnValue: "₹XXX",
-  },
-  {
-    title: "DEF Defence Ltd",
+    title: "Ashapura Minechem Ltd",
     status: "exited",
-    sector: "Defence & Aerospace",
-    recoPrice: "₹XXX / share",
-    exitPrice: "₹XXX",
-    thesis:
-      "Recommended on the thesis of significant indigenisation push by GoI presenting a multi-year growth runway, with a strong order pipeline across helicopters, aircraft, and engine segments worth $35-40 billion.",
+    sector: "Metals & Mining",
+    reportFile: "Ashapura Minechem Limited - LNPR REPORT.pdf",
+    recoPrice: "₹370 / share",
+    exitPrice: "₹730 / share",
+    thesis: `Leading Indian mineral company based in Mumbai.
+It produces and exports minerals like bentonite & bauxite. 
+The company serves industries such as oil, steel, and construction worldwide.`,
     metrics: [
-      { value: "XX%", label: "Revenue CAGR" },
-      { value: "XX%", label: "PAT CAGR" },
-      { value: "XX%", label: "RoE" },
-      { value: "Net Cash", label: "Balance Sheet" },
+      { value: "46%", label: "Revenue CAGR" },
+      { value: "65%", label: "PAT CAGR" },
+      { value: "23%", label: "ROE 5yrs" },
+      { value: "13", label: "P/E at Exit" },
     ],
-    returnLabel: "Returns Delivered",
-    returnValue: "X.Xx",
-    returnNote: "in XX months",
+    returnLabel: "RETURNS DELIVERED",
+    returnValue: "97% in 08 months",
   },
+/* 
+Exited                 Chemical Industry
+Stallion India Fluorochemicals Ltd
+Reco Price: ₹150 / share • Exited at ₹405
+
+Co. manufactures & supplies refrigerant gases and fluorochemicals. It serves industries like HVAC, automotive, electronics in India & abroad.
+
+62%                                   109%
+Revenue CAGR          PAT CAGR
+
+20%                                    0
+ROCE At Exit              D/E At Exit
+
+RETURNS DELIVERED  170% in 02 months
+*/
   {
-    title: "GHI Engineering Ltd",
+    title: "Stallion India Fluorochemicals Ltd",
     status: "exited",
-    sector: "Capital Goods",
-    recoPrice: "₹XXX / share",
-    exitPrice: "₹XXX",
-    thesis:
-      "A proxy play on India's water and energy capex recovery. New product introductions and a focus on exports and service revenue provided a strong earnings upgrade cycle over the holding period.",
+    sector: "Chemical Industry",
+    reportFile: "Stallion India Fluorochemicals Limited.pdf",
+    recoPrice: "₹150 / share",
+    exitPrice: "₹405 / share",
+    thesis: `Co. manufactures & supplies refrigerant gases and fluorochemicals. 
+    It serves industries like HVAC, automotive, electronics in India & abroad.`,
     metrics: [
-      { value: "XX%", label: "Revenue Growth" },
-      { value: "XX%", label: "EBITDA Growth" },
-      { value: "XX%", label: "PAT Growth" },
-      { value: "₹XXCr", label: "New Order Win" },
+      { value: "62%", label: "Revenue CAGR" },
+      { value: "109%", label: "PAT CAGR" },
+      { value: "20%", label: "ROCE At Exit" },
+      { value: "0", label: "D/E At Exit" },
     ],
-    returnLabel: "Returns Delivered",
-    returnValue: "X.Xx",
-    returnNote: "in XX months",
+    returnLabel: "RETURNS DELIVERED",
+    returnValue: "170% in 02 months",
   },
-  {
-    title: "JKL Tech Ltd",
-    status: "exited",
-    sector: "Technology",
-    recoPrice: "₹XXX / share",
-    exitPrice: "₹XXX",
-    thesis:
-      "Recommended on the thesis of rising EV investments by global auto OEMs driving demand for Auto ER&D services. Margin expansion from better utilisation and order inflows provided a significant re-rating catalyst.",
-    metrics: [
-      { value: "XX%", label: "Margin at Reco" },
-      { value: "XX%", label: "Margin at Exit" },
-      { value: "XXx", label: "P/E at Reco" },
-      { value: "XXx", label: "P/E at Exit" },
-    ],
-    returnLabel: "Returns Delivered",
-    returnValue: "X.Xx",
-    returnNote: "in XX months",
-  },
+  // {
+  //   title: "PQR Consumer Ltd",
+  //   status: "holding",
+  //   sector: "Consumer Goods",
+  //   recoPrice: "₹XXX / share",
+  //   thesis:
+  //     "An under-the-radar consumer brand with dominant regional presence, transitioning to a national footprint. Asset-light model with high cash generation and zero debt provides significant margin of safety.",
+  //   metrics: [
+  //     { value: "XX%", label: "Revenue CAGR" },
+  //     { value: "XX%", label: "RoE" },
+  //     { value: "Zero", label: "Net Debt" },
+  //     { value: "XXx", label: "P/E (FY25e)" },
+  //   ],
+  //   returnLabel: "Target Price",
+  //   returnValue: "₹XXX",
+  // },
+  // {
+  //   title: "DEF Defence Ltd",
+  //   status: "exited",
+  //   sector: "Defence & Aerospace",
+  //   recoPrice: "₹XXX / share",
+  //   exitPrice: "₹XXX",
+  //   thesis:
+  //     "Recommended on the thesis of significant indigenisation push by GoI presenting a multi-year growth runway, with a strong order pipeline across helicopters, aircraft, and engine segments worth $35-40 billion.",
+  //   metrics: [
+  //     { value: "XX%", label: "Revenue CAGR" },
+  //     { value: "XX%", label: "PAT CAGR" },
+  //     { value: "XX%", label: "RoE" },
+  //     { value: "Net Cash", label: "Balance Sheet" },
+  //   ],
+  //   returnLabel: "Returns Delivered",
+  //   returnValue: "X.Xx",
+  //   returnNote: "in XX months",
+  // },
+  // {
+  //   title: "GHI Engineering Ltd",
+  //   status: "exited",
+  //   sector: "Capital Goods",
+  //   recoPrice: "₹XXX / share",
+  //   exitPrice: "₹XXX",
+  //   thesis:
+  //     "A proxy play on India's water and energy capex recovery. New product introductions and a focus on exports and service revenue provided a strong earnings upgrade cycle over the holding period.",
+  //   metrics: [
+  //     { value: "XX%", label: "Revenue Growth" },
+  //     { value: "XX%", label: "EBITDA Growth" },
+  //     { value: "XX%", label: "PAT Growth" },
+  //     { value: "₹XXCr", label: "New Order Win" },
+  //   ],
+  //   returnLabel: "Returns Delivered",
+  //   returnValue: "X.Xx",
+  //   returnNote: "in XX months",
+  // },
+  // {
+  //   title: "JKL Tech Ltd",
+  //   status: "exited",
+  //   sector: "Technology",
+  //   recoPrice: "₹XXX / share",
+  //   exitPrice: "₹XXX",
+  //   thesis:
+  //     "Recommended on the thesis of rising EV investments by global auto OEMs driving demand for Auto ER&D services. Margin expansion from better utilisation and order inflows provided a significant re-rating catalyst.",
+  //   metrics: [
+  //     { value: "XX%", label: "Margin at Reco" },
+  //     { value: "XX%", label: "Margin at Exit" },
+  //     { value: "XXx", label: "P/E at Reco" },
+  //     { value: "XXx", label: "P/E at Exit" },
+  //   ],
+  //   returnLabel: "Returns Delivered",
+  //   returnValue: "X.Xx",
+  //   returnNote: "in XX months",
+  // },
 ];
 
 const EXITED_CASE_STUDY_RETURN_STYLE = {
@@ -126,6 +165,8 @@ const CASE_STUDY_NOTE_STYLE = {
   fontSize: "13px",
   fontFamily: "Outfit, sans-serif",
 };
+
+const getReportHref = (fileName) => encodeURI(`/${fileName}`);
 
 const TESTIMONIALS = [
   {
@@ -658,9 +699,12 @@ export default function Home() {
 
         {/* CASE STUDIES */}
 
-        {/* <section className="casestudies" id="casestudies">
+        <section className="casestudies" id="casestudies">
           <div className="section-header">
-            <div className="section-eyebrow" style={{ color: "var(--gold-lt)" }}>
+            <div
+              className="section-eyebrow"
+              style={{ color: "var(--gold-lt)" }}
+            >
               Research in Action
             </div>
             <h2 className="section-title white">Case Studies</h2>
@@ -693,7 +737,9 @@ export default function Home() {
                 <div className="cs-card-head">
                   <div className="cs-status-row">
                     <span className={`cs-status ${caseStudy.status}`}>
-                      {caseStudy.status === "holding" ? "● Holding" : "✓ Exited"}
+                      {caseStudy.status === "holding"
+                        ? "● Holding"
+                        : "✓ Exited"}
                     </span>
                     <span className="cs-sector">{caseStudy.sector}</span>
                   </div>
@@ -703,7 +749,8 @@ export default function Home() {
                     {caseStudy.exitPrice ? (
                       <>
                         {" "}
-                        &nbsp;·&nbsp; Exited at <strong>{caseStudy.exitPrice}</strong>
+                        &nbsp;·&nbsp; Exited at{" "}
+                        <strong>{caseStudy.exitPrice}</strong>
                       </>
                     ) : null}
                   </p>
@@ -751,22 +798,28 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="cs-card-foot">
-                  <a href="#" className="cs-btn">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
+                  {caseStudy.reportFile ? (
+                    <a
+                      href={getReportHref(caseStudy.reportFile)}
+                      className="cs-btn"
+                      download={caseStudy.reportFile}
                     >
-                      <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" />
-                    </svg>
-                    Download Full Report
-                  </a>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" />
+                      </svg>
+                      Download Full Report
+                    </a>
+                  ) : null}
                 </div>
               </div>
             ))}
           </div>
-        </section> */}
+        </section>
 
         {/* OUR BELIEFS */}
         <section className="beliefs" id="beliefs">
@@ -792,7 +845,7 @@ export default function Home() {
               </div>
             </div>
             <div className="beliefs-grid">
-              <div className="belief-item" style={{paddingTop:'0'}}>
+              <div className="belief-item" style={{ paddingTop: "0" }}>
                 <div className="belief-num">01</div>
                 <div className="belief-content">
                   <h3>Risk Before Returns</h3>
@@ -1246,7 +1299,9 @@ export default function Home() {
               >
                 ✕
               </button>
-              <div className="testi-modal-photo">{activeTestimonial.avatar}</div>
+              <div className="testi-modal-photo">
+                {activeTestimonial.avatar}
+              </div>
               <h3 id="testimonial-modal-name">{activeTestimonial.name}</h3>
               <p className="modal-desig">
                 {activeTestimonial.designation}, {activeTestimonial.location}
@@ -1372,7 +1427,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
       </main>
     </>
   );
