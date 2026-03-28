@@ -398,7 +398,7 @@ footer{background:var(--ink);padding:80px 60px 0;border-top:3px solid var(--gold
 
     .cs-return .value {
         font-family: 'Poppins', sans-serif;
-        font-size: 22px;
+        font-size: 30px;
         font-weight: 700;
         color: var(--gold-lt);
     }
@@ -774,6 +774,9 @@ footer{background:var(--ink);padding:80px 60px 0;border-top:3px solid var(--gold
             padding-left: 24px;
             padding-right: 24px;
         }
+        .cs-return{
+            flex-direction: column;
+        }
     }
 
     @media(max-width:600px) {
@@ -790,7 +793,7 @@ footer{background:var(--ink);padding:80px 60px 0;border-top:3px solid var(--gold
         }
 
         .hero-stat {
-            flex: 1;
+            flex: 0 0 100%;
         }
 
         .topbar {

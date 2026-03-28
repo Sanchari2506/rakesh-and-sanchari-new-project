@@ -110,13 +110,8 @@ export default function Footer() {
             <div className="footer-contact-item">
               <span className="ic">✉</span>
               <p>
-                <a href="/cdn-cgi/l/email-protection#0960676f66496567797b6a6879607d6865276a6664">
-                  <span
-                    className="__cf_email__"
-                    data-cfemail="4e272028210e22203e3c2d2f3e273a2f22602d2123"
-                  >
-                    info@lnprcapital.com
-                  </span>
+                <a href="mailto:info@lnprcapital.com">
+                  info@lnprcapital.com
                 </a>
               </p>
             </div>

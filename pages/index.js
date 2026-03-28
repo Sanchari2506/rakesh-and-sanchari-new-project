@@ -45,23 +45,9 @@ The company serves industries such as oil, steel, and construction worldwide.`,
       { value: "13", label: "P/E at Exit" },
     ],
     returnLabel: "RETURNS DELIVERED",
-    returnValue: "97% in 08 months",
+    returnValue: "97%",
+    returnValueMonths: "in 08 months",
   },
-/* 
-Exited                 Chemical Industry
-Stallion India Fluorochemicals Ltd
-Reco Price: ₹150 / share • Exited at ₹405
-
-Co. manufactures & supplies refrigerant gases and fluorochemicals. It serves industries like HVAC, automotive, electronics in India & abroad.
-
-62%                                   109%
-Revenue CAGR          PAT CAGR
-
-20%                                    0
-ROCE At Exit              D/E At Exit
-
-RETURNS DELIVERED  170% in 02 months
-*/
   {
     title: "Stallion India Fluorochemicals Ltd",
     status: "exited",
@@ -78,7 +64,8 @@ RETURNS DELIVERED  170% in 02 months
       { value: "0", label: "D/E At Exit" },
     ],
     returnLabel: "RETURNS DELIVERED",
-    returnValue: "170% in 02 months",
+    returnValue: "170%",
+    returnValueMonths: "in 02 months",
   },
   // {
   //   title: "PQR Consumer Ltd",
@@ -785,7 +772,7 @@ export default function Home() {
                           : undefined
                       }
                     >
-                      {caseStudy.returnValue}
+                      {caseStudy.returnValue} <span style={{'fontSize':'20px', fontWeight: '500'}}>{caseStudy.returnValueMonths}</span>
                       {caseStudy.returnNote ? (
                         <>
                           {" "}
@@ -1184,14 +1171,7 @@ export default function Home() {
           </div>
           <div className="comp-note">
             Contact us at{" "}
-            <a href="/cdn-cgi/l/email-protection#ed84838b82ad81839d9f8e8c9d84998c81c38e8280">
-              <span
-                className="__cf_email__"
-                data-cfemail="4821262e27082426383a2b2938213c2924662b2725"
-              >
-                info@lnprcapital.com
-              </span>
-            </a>{" "}
+            <a href="mailto:info@lnprcapital.com">info@lnprcapital.com</a>{" "}
             for any queries, complaints or grievances. Grievances will be
             resolved within 30 days. If not satisfied, lodge a complaint with
             SEBI via{" "}
@@ -1368,11 +1348,7 @@ export default function Home() {
                 <div className="faq-a">
                   Subscribers get full access to our research reports, timely
                   exit calls, and can reach us directly via phone or email at{" "}
-                  <a
-                    href="/cdn-cgi/l/email-protection"
-                    className="__cf_email__"
-                    data-cfemail="c4adaaa2ab84a8aab4b6a7a5b4adb0a5a8eaa7aba9"
-                  >
+                  <a href="mailto:info@lnprcapital.com">
                     info@lnprcapital.com
                   </a>{" "}
                   for any queries.
