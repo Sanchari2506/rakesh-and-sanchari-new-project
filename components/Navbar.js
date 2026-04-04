@@ -68,6 +68,14 @@ export default function Navbar() {
         <span />
       </button>
       <ul className="nav-links">
+        <li key={`resources-page-link`}>
+          <a
+            href={`/resources`}
+            className={`nav-link${router.pathname === "/resources" ? " active" : ""}`}
+          >
+            Resources
+          </a>
+        </li>
         {navItems.map((item) => (
           <li key={`${item.sectionId}-${item.label}`}>
             <a href={getSectionHref(item.sectionId)} className={item.className}>
@@ -81,6 +89,15 @@ export default function Navbar() {
         className={`mobile-nav${mobileMenuOpen ? " is-open" : ""}`}
       >
         <ul className="mobile-nav-links">
+          <li key={`mobile-resources-page-link`}>
+            <a
+              href={`/resources`}
+              className={`mobile-nav-link${router.pathname === "/resources" ? ` active` : ""}`}
+              onClick={closeMobileMenu}
+            >
+              Resources
+            </a>
+          </li>
           {navItems.map((item) => (
             <li key={`mobile-${item.sectionId}-${item.label}`}>
               <a

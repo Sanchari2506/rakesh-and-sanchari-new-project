@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="flex-1">{children}</div>
+      <div className="flex-1" style={{"background":"#0f1923"}}>{children}</div>
       {/* Footer is in _app.js to be present on all pages */}
       <Footer/>
     </div>

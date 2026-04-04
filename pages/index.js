@@ -201,7 +201,6 @@ const TESTIMONIALS = [
 ];
 
 export default function Home() {
-  const [openAccItems, setOpenAccItems] = useState([false, false, false]);
   const [openFaqItems, setOpenFaqItems] = useState([
     true,
     false,
@@ -213,12 +212,6 @@ export default function Home() {
   const [caseStudyFilter, setCaseStudyFilter] = useState("all");
   const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(null);
   const testimonialTrackRef = useRef(null);
-
-  const toggleAcc = (index) => {
-    setOpenAccItems((prev) =>
-      prev.map((isOpen, itemIndex) => (itemIndex === index ? !isOpen : isOpen)),
-    );
-  };
 
   const toggleFaq = (index) => {
     setOpenFaqItems((prev) =>
@@ -915,15 +908,11 @@ export default function Home() {
             </p>
           </div>
           <div className="acc-wrap">
-            <div className={`acc-item${openAccItems[0] ? " open" : ""}`}>
-              <button
-                type="button"
-                className="acc-trigger"
-                onClick={() => toggleAcc(0)}
-              >
+            <details className="acc-item">
+              <summary className="acc-trigger">
                 Investors Complaints Data — Month ending January 2026
                 <span className="chevron">▾</span>
-              </button>
+              </summary>
               <div className="acc-body">
                 <div style={{ overflowX: "auto" }}>
                   <table>
@@ -997,17 +986,13 @@ export default function Home() {
                   last day of the month.
                 </p>
               </div>
-            </div>
-            <div className={`acc-item${openAccItems[1] ? " open" : ""}`}>
-              <button
-                type="button"
-                className="acc-trigger"
-                onClick={() => toggleAcc(1)}
-              >
+            </details>
+            <details className="acc-item">
+              <summary className="acc-trigger">
                 Trend Of Monthly Disposal Of Complaints (April 2025 – March
                 2026)
                 <span className="chevron">▾</span>
-              </button>
+              </summary>
               <div className="acc-body">
                 <div style={{ overflowX: "auto" }}>
                   <table>
@@ -1115,16 +1100,12 @@ export default function Home() {
                   </table>
                 </div>
               </div>
-            </div>
-            <div className={`acc-item${openAccItems[2] ? " open" : ""}`}>
-              <button
-                type="button"
-                className="acc-trigger"
-                onClick={() => toggleAcc(2)}
-              >
+            </details>
+            <details className="acc-item">
+              <summary className="acc-trigger">
                 Trend Of Annual Disposal Of Complaints
                 <span className="chevron">▾</span>
-              </button>
+              </summary>
               <div className="acc-body">
                 <div style={{ overflowX: "auto" }}>
                   <table>
@@ -1167,7 +1148,7 @@ export default function Home() {
                   </table>
                 </div>
               </div>
-            </div>
+            </details>
           </div>
           <div className="comp-note">
             Contact us at{" "}
