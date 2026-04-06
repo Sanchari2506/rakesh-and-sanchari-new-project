@@ -19,9 +19,9 @@ const FEATURED_MAIN = {
   date: "March 2026",
   read: "8 min read",
   title:
-    "Why Small & Micro Caps Remain the Most Fertile Ground for Indian Retail Investors in 2026",
+    "The Market Is Giving You a Gift. Most Will Refuse It.",
   excerpt:
-    "As institutional capital crowds into large-caps, the true alpha opportunity lies where nobody is looking — the ignored, under-researched small and micro-cap universe. A deep dive into why patient, research-driven investors can still find multi-baggers here.",
+    "When fear rules the street and screens turn red, the seeds of the next bull market are being quietly planted. History keeps saying this. The question is — are you listening this time?",
   linkLabel: "Read Full Article",
   linkURL: "/article-one",
   showOverlay: true,
