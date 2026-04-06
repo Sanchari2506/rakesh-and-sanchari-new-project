@@ -23,6 +23,7 @@ const FEATURED_MAIN = {
   excerpt:
     "As institutional capital crowds into large-caps, the true alpha opportunity lies where nobody is looking — the ignored, under-researched small and micro-cap universe. A deep dive into why patient, research-driven investors can still find multi-baggers here.",
   linkLabel: "Read Full Article",
+  linkURL: "/article-one",
   showOverlay: true,
 };
 
@@ -37,6 +38,7 @@ const FEATURED_ASIDE = [
     read: "18 min",
     title: "Concentrated vs. Diversified: How We Think About Position Sizing",
     linkLabel: "Watch Now",
+    linkURL: "#",
     showOverlay: true,
     showPlayButton: true,
   },
@@ -50,6 +52,7 @@ const FEATURED_ASIDE = [
     read: "Q1 2026",
     title: "Capital Goods Renaissance: 3 Structural Themes Driving the Sector",
     linkLabel: "Read Note",
+    linkURL: "#",
     showOverlay: true,
   },
 ];
@@ -67,6 +70,7 @@ const ARTICLE_RESOURCES = [
     excerpt:
       "How to read between the lines of an annual report — and spot the warning signs before a company blows up.",
     linkLabel: "Read More",
+    linkURL: "/article-one",
     showOverlay: true,
   },
   {
@@ -81,6 +85,7 @@ const ARTICLE_RESOURCES = [
     excerpt:
       "A study of India's top wealth creators over 15 years — and what they all had in common besides a rising stock price.",
     linkLabel: "Read More",
+    linkURL: "/article-two",
     showOverlay: true,
   },
   {
@@ -95,6 +100,7 @@ const ARTICLE_RESOURCES = [
     excerpt:
       "Not every SME listing deserves your capital. Here's a rigorous framework to evaluate SME IPOs like a professional analyst.",
     linkLabel: "Read More",
+    linkURL: "/article-three",
     showOverlay: true,
   },
 ];
@@ -200,7 +206,11 @@ const REPORT_RESOURCES = [
 ];
 
 const preventPlaceholderNavigation = (event) => {
-  event.preventDefault();
+  const href = event.currentTarget.getAttribute("href");
+
+  if (!href || href === "#") {
+    event.preventDefault();
+  }
 };
 
 const matchesResource = (resource, activeFilter, normalizedQuery) => {
@@ -455,7 +465,7 @@ export default function Resources() {
         />
         <h3 className="card-title-sm">{resource.title}</h3>
         <a
-          href="#"
+          href={resource.linkURL}
           className="card-link card-link-sm"
           onClick={preventPlaceholderNavigation}
         >
@@ -481,7 +491,7 @@ export default function Resources() {
         <h3 className="card-title-sm">{resource.title}</h3>
         <p className="card-excerpt">{resource.excerpt}</p>
         <a
-          href="#"
+          href={resource.linkURL}
           className="card-link"
           onClick={preventPlaceholderNavigation}
         >
@@ -573,7 +583,7 @@ export default function Resources() {
                     <h2 className="card-title">{FEATURED_MAIN.title}</h2>
                     <p className="card-excerpt">{FEATURED_MAIN.excerpt}</p>
                     <a
-                      href="#"
+                      href={FEATURED_MAIN.linkURL}
                       className="card-link"
                       onClick={preventPlaceholderNavigation}
                     >
@@ -583,16 +593,16 @@ export default function Resources() {
                 </div>
               ) : null}
 
-              {featuredAsideVisible.length ? (
+              {/* {featuredAsideVisible.length ? (
                 <div className="featured-aside">
                   {featuredAsideVisible.map(renderFeaturedAsideCard)}
                 </div>
-              ) : null}
+              ) : null} */}
             </div>
           ) : null}
 
           {/* LATEST ARTICLES */}
-          {showArticles ? (
+          {/* {showArticles ? (
             <>
               <div className="section-header scroll-anim" id="articles-header">
                 <h2>
@@ -611,14 +621,14 @@ export default function Resources() {
                 {visibleArticles.map(renderArticleCard)}
               </div>
             </>
-          ) : null}
+          ) : null} */}
 
-          {showVideos && (showFeatured || showArticles) ? (
+          {/* {showVideos && (showFeatured || showArticles) ? (
             <div className="gold-divider"></div>
-          ) : null}
+          ) : null} */}
 
           {/* VIDEOS */}
-          {showVideos ? (
+          {/* {showVideos ? (
             <>
               <div className="section-header scroll-anim" id="videos-header">
                 <h2>
@@ -637,14 +647,14 @@ export default function Resources() {
                 {visibleVideos.map(renderVideoCard)}
               </div>
             </>
-          ) : null}
+          ) : null} */}
 
-          {showReports && (showFeatured || showArticles || showVideos) ? (
+          {/* {showReports && (showFeatured || showArticles || showVideos) ? (
             <div className="gold-divider"></div>
-          ) : null}
+          ) : null} */}
 
           {/* RESEARCH NOTES */}
-          {showReports ? (
+          {/* {showReports ? (
             <>
               <div className="section-header scroll-anim" id="reports-header">
                 <h2>
@@ -663,7 +673,7 @@ export default function Resources() {
                 {visibleReports.map(renderArticleCard)}
               </div>
             </>
-          ) : null}
+          ) : null} */}
         </div>
       </div>
 

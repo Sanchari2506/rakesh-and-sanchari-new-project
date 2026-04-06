@@ -23,6 +23,15 @@
   /* --font-head: "Cormorant Garamond", Georgia, serif; */
   --font-head: "Cormorant Garamond", serif;
   --font-body: "DM Sans", sans-serif;
+  --paper: #f5f0e8;
+  --accent: #b5862a;
+  --accent-light: #d4a84b;
+  --rule: #c8b89a;
+  --highlight-bg: #2a1f0f;
+  --highlight-text: #f5f0e8;
+  --pullquote-bg: #f0e8d4;
+  --red: #8b1a1a;
+  --green: #1a5c2a;
 }
 
 * {
@@ -2192,6 +2201,349 @@ footer {
   background: var(--gold-lt);
 }
 
+/* article page styles */
+.article-one-page {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 60px 40px 100px;
+}
+
+/* MASTHEAD */
+.article-one-page .masthead {
+  text-align: center;
+  border-top: 3px double var(--ink);
+  border-bottom: 3px double var(--ink);
+  padding: 18px 0 14px;
+  margin-bottom: 10px;
+}
+
+.article-one-page .masthead-pub {
+  font-family: "Courier Prime", monospace;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.article-one-page .masthead-title {
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+.article-one-page .date-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 48px;
+}
+
+.article-one-page .date-line span {
+  font-family: "Courier Prime", monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.article-one-page .date-line .section-label {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2px 10px;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+}
+
+/* HEADLINE */
+.article-one-page .headline-block {
+  margin-bottom: 40px;
+}
+
+.article-one-page .kicker {
+  font-family: "Courier Prime", monospace;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.article-one-page h1.main-headline {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.article-one-page h1.main-headline em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.article-one-page .deck {
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--muted);
+  font-style: italic;
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+}
+
+/* BYLINE */
+.article-one-page .byline-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 40px;
+}
+
+.article-one-page .byline-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--highlight-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+  font-style: italic;
+}
+
+.article-one-page .byline-text {
+  font-family: "Courier Prime", monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.article-one-page .byline-text strong {
+  color: var(--ink);
+  letter-spacing: 0.2em;
+}
+
+/* BODY */
+.article-one-page .article-body p {
+  margin-bottom: 22px;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.article-one-page .article-body p.first-para::first-letter {
+  font-family: "Playfair Display", serif;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 0.85;
+  float: left;
+  margin-right: 8px;
+  margin-top: 8px;
+  color: var(--accent);
+}
+
+/* SECTION HEADERS */
+.article-one-page .section-break {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 44px 0 28px;
+}
+
+.article-one-page .section-break::before,
+.section-break::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.article-one-page .section-break span {
+  font-family: "Courier Prime", monospace;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.article-one-page h2.section-head {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+.article-one-page h2.section-head em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* PULLQUOTE */
+.article-one-page .pullquote {
+  background: var(--highlight-bg);
+  color: var(--paper);
+  padding: 36px 40px;
+  margin: 44px -40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-one-page .pullquote::before {
+  content: "\201C";
+  font-family: "Playfair Display", serif;
+  font-size: 140px;
+  color: var(--accent);
+  opacity: 0.25;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  line-height: 1;
+}
+
+.article-one-page .pullquote p {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.55;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0 !important;
+  text-align: left !important;
+}
+
+.article-one-page .pullquote .attribution {
+  font-family: "Courier Prime", monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-top: 16px;
+  display: block;
+}
+
+/* STAT BOX */
+.article-one-page .stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 40px 0;
+}
+
+.article-one-page .stat-box {
+  background: var(--paper);
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.article-one-page .stat-number {
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.article-one-page .stat-number.up {
+  color: var(--green);
+}
+.article-one-page .stat-number.down {
+  color: var(--red);
+}
+.article-one-page .stat-number.neutral {
+  color: var(--accent);
+}
+
+.article-one-page .stat-label {
+  font-family: "Courier Prime", monospace;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* SIDEBAR / INSET */
+.article-one-page .inset-box {
+  float: right;
+  width: 240px;
+  margin: 0 -20px 24px 32px;
+  padding: 24px;
+  border: 1px solid var(--rule);
+  background: var(--pullquote-bg);
+}
+
+.article-one-page .inset-box .inset-head {
+  font-family: "Courier Prime", monospace;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: block;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+
+.article-one-page .inset-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.article-one-page .inset-box ul li {
+  font-family: "EB Garamond", serif;
+  font-size: 15px;
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--rule);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.article-one-page .inset-box ul li:last-child {
+  border-bottom: none;
+}
+
+.inset-box ul li::before {
+  content: "▸ ";
+  color: var(--accent);
+  font-size: 11px;
+}
+
+/* EMPHASIS */
+.article-one-page strong.highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.article-one-page .clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 /* ── RESPONSIVE ── */
 
 @media (max-width: 1100px) {
@@ -2205,9 +2557,9 @@ footer {
 }
 
 @media (max-width: 900px) {
-    .min-h-screen.flex.flex-col{
-        overflow: hidden;
-    }
+  .min-h-screen.flex.flex-col {
+    overflow: hidden;
+  }
   .resources-page .page-hero {
     padding: 40px 20px 40px 20px;
   }
@@ -2367,5 +2719,29 @@ footer {
 
   .topbar {
     display: none;
+  }
+  .article-one-page h1.main-headline {
+    font-size: 36px;
+  }
+  .article-one-page .pullquote {
+    margin: 44px -20px;
+    padding: 28px 24px;
+  }
+  .article-one-page .pullquote p {
+    font-size: 18px;
+  }
+  .article-one-page .inset-box {
+    float: none;
+    width: 100%;
+    margin: 24px 0;
+  }
+  .article-one-page .stat-row {
+    grid-template-columns: 1fr;
+  }
+  .article-one-page {
+    padding: 40px 20px 80px;
+  }
+  .article-one-page .date-line .section-label{
+    margin-right: 20px;
   }
 }
