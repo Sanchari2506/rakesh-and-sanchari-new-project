@@ -16,8 +16,8 @@ const FEATURED_MAIN = {
   iconType: "article",
   iconSize: 48,
   category: "Market Analysis",
-  date: "March 2026",
-  read: "8 min read",
+  date: "April 2026",
+  read: "",
   title:
     "The Market Is Giving You a Gift. Most Will Refuse It.",
   excerpt:
