@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const FILTER_OPTIONS = [
   { value: "all", label: "All" },
@@ -440,7 +441,13 @@ export default function Resources() {
   const renderCardImage = (resource) => (
     <div className="card-img-wrap">
       <div className="card-img-placeholder">
-        <PlaceholderIcon type={resource.iconType} size={resource.iconSize} />
+        {/* <PlaceholderIcon type={resource.iconType} size={resource.iconSize} /> */}
+        <Image
+          src={`/images/article-one-image.png`}  
+          alt={resource.title}
+          width={900}
+          height={500}
+        />
       </div>
       <div className={`card-type-badge ${resource.badgeClass}`}>
         {resource.badgeLabel}
