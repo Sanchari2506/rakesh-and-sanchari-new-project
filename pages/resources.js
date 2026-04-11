@@ -531,6 +531,7 @@ export default function Resources() {
         image={`https://www.lnprcapital.com/images/footerlogo.png`}
         description={`Articles, deep dives, and video conversations on Indian small & micro-cap investing — curated for the serious, long-term investor.`}
         url={`https://www.lnprcapital.com/resources`}
+        contentType="website"
       />
 
       {/* PAGE HERO */}

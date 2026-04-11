@@ -18,7 +18,9 @@ export default function ArticleOne() {
       <SEO title={`The Market Is Giving You a Gift. Most Will Refuse It.`} 
       image={`https://www.lnprcapital.com/images/article-one-image.png`}
       description={`When fear rules the street and screens turn red, the seeds of the next bull market are being quietly planted. History keeps saying this. The question is — are you listening this time?`}
-      url={`https://www.lnprcapital.com/article-one`} />
+      url={`https://www.lnprcapital.com/article-one`} 
+      contentType="article"
+      />
       
       {/* MASTHEAD */}
       <div className="masthead">
@@ -29,7 +31,7 @@ export default function ArticleOne() {
       </div>
 
       <div className="date-line">
-        <span>April 2026</span>
+        <span>05 April 2026</span>
         <span className="section-label" style={{ marginBottom: "0px" }}>
           Special Commentary
         </span>
