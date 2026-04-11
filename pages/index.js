@@ -28,45 +28,85 @@ RETURNS DELIVERED  97% in 08 months
 */
 
 const CASE_STUDIES = [
-  {
-    title: "Ashapura Minechem Ltd",
-    status: "exited",
-    sector: "Metals & Mining",
-    reportFile: "Ashapura Minechem Limited - LNPR REPORT.pdf",
-    recoPrice: "₹370 / share",
-    exitPrice: "₹730 / share",
-    thesis: `Leading Indian mineral company based in Mumbai.
-It produces and exports minerals like bentonite & bauxite. 
-The company serves industries such as oil, steel, and construction worldwide.`,
-    metrics: [
-      { value: "46%", label: "Revenue CAGR" },
-      { value: "65%", label: "PAT CAGR" },
-      { value: "23%", label: "ROE 5yrs" },
-      { value: "13", label: "P/E at Exit" },
-    ],
-    returnLabel: "RETURNS DELIVERED",
-    returnValue: "97%",
-    returnValueMonths: "in 08 months",
-  },
-  {
-    title: "Stallion India Fluorochemicals Ltd",
-    status: "exited",
-    sector: "Chemical Industry",
-    reportFile: "Stallion India Fluorochemicals Limited.pdf",
-    recoPrice: "₹150 / share",
-    exitPrice: "₹405 / share",
-    thesis: `Co. manufactures & supplies refrigerant gases and fluorochemicals. 
-    It serves industries like HVAC, automotive, electronics in India & abroad.`,
-    metrics: [
-      { value: "62%", label: "Revenue CAGR" },
-      { value: "109%", label: "PAT CAGR" },
-      { value: "20%", label: "ROCE At Exit" },
-      { value: "0", label: "D/E At Exit" },
-    ],
-    returnLabel: "RETURNS DELIVERED",
-    returnValue: "170%",
-    returnValueMonths: "in 02 months",
-  },
+//   {
+//     title: "Ashapura Minechem Limited",
+//     status: "exited",
+//     sector: "Multi-Mineral Mining & Processing",
+//     reportFile: "Ashapura Minechem Limited - LNPR REPORT.pdf",
+//     recoPrice: "₹370 / share",
+//     exitPrice: "₹730 / share",
+//     thesis: `Leading Indian mineral company based in Mumbai.
+// It produces and exports minerals like bentonite & bauxite. 
+// The company serves industries such as oil, steel, and construction worldwide.`,
+//     metrics: [
+//       { value: "46%", label: "Revenue CAGR" },
+//       { value: "65%", label: "PAT CAGR" },
+//       { value: "23%", label: "ROE 5yrs" },
+//       { value: "13", label: "P/E at Exit" },
+//     ],
+//     returnLabel: "RETURNS DELIVERED",
+//     returnValue: "97%",
+//     returnValueMonths: "in 08 months",
+//   },
+{
+  title: "Ashapura Minechem Limited",
+  status: "holding",
+  sector: "Multi-Mineral Mining & Processing",
+  reportFile: "Ashapura Minechem Limited - LNPR REPORT.pdf",
+  recoPrice: "₹370 / share",
+  exitPrice: "₹730 / share",
+  thesis: `A global mineral leader with operations across 90+ countries and top-3 positions in bentonite and bleaching clay. 
+The company’s growth is driven by its Guinea bauxite operations contributing ~76% of revenue. 
+However, the investment case depends heavily on volume growth offsetting declining bauxite prices, making it a high-risk, high-upside commodity play.`,
+  metrics: [
+    { value: "50%", label: "Revenue Growth (9M FY26 YoY)" },
+    { value: "14.2%", label: "EBITDA Margin (9M FY26)" },
+    { value: "9.3%", label: "PBT Margin (9M FY26)" },
+    { value: "76%", label: "Revenue from Guinea" },
+  ],
+  returnLabel: "RETURNS DELIVERED",
+  returnValue: "170%",
+  returnValueMonths: "in 02 months",
+}, 
+{
+  title: "Stallion India Fluorochemicals Limited",
+  status: "exited",
+  sector: "Fluorochemicals — Refrigerants & Specialty",
+  reportFile: "Stallion India Fluorochemicals Limited.pdf",
+  recoPrice: "₹150 / share",
+  exitPrice: "₹405 / share",
+  thesis: `A near debt-free fluorochemical company benefiting from India's AC penetration boom. 
+  It operates as a refrigerant blending and distribution player with strong ROCE and margins. 
+  However, the long-term investment thesis depends on its ability to transition from HFCs to next-gen HFO refrigerants amid regulatory phase-down risks.`,
+  metrics: [
+    { value: "18–22%", label: "Revenue Growth Outlook" },
+    { value: "12–13%", label: "PAT Margin" },
+    { value: "20%", label: "ROCE" },
+    { value: "0.01x", label: "D/E" },
+  ],
+  returnLabel: "RETURNS DELIVERED",
+  returnValue: "170%",
+  returnValueMonths: "in 02 months",
+}
+// {
+//     title: "Stallion India Fluorochemicals Ltd",
+//     status: "exited",
+//     sector: "Chemical Industry",
+//     reportFile: "Stallion India Fluorochemicals Limited.pdf",
+//     recoPrice: "₹150 / share",
+//     exitPrice: "₹405 / share",
+//     thesis: `Co. manufactures & supplies refrigerant gases and fluorochemicals. 
+//     It serves industries like HVAC, automotive, electronics in India & abroad.`,
+//     metrics: [
+//       { value: "62%", label: "Revenue CAGR" },
+//       { value: "109%", label: "PAT CAGR" },
+//       { value: "20%", label: "ROCE At Exit" },
+//       { value: "0", label: "D/E At Exit" },
+//     ],
+//     returnLabel: "RETURNS DELIVERED",
+//     returnValue: "170%",
+//     returnValueMonths: "in 02 months",
+//   },
   // {
   //   title: "PQR Consumer Ltd",
   //   status: "holding",

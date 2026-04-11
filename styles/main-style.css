@@ -1210,6 +1210,7 @@ footer {
   text-transform: uppercase;
   padding: 4px 12px;
   border-radius: 2px;
+  flex:0 0 auto;
 }
 
 .cs-status.holding {
@@ -1229,6 +1230,7 @@ footer {
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  text-align: right;
 }
 
 .cs-card-head h3 {
