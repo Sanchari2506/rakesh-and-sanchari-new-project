@@ -6,7 +6,6 @@ import Image from "next/image";
 import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 
-
 export default function ArticleOne() {
   const router = useRouter();
   const pageRef = useRef(null);
@@ -15,13 +14,16 @@ export default function ArticleOne() {
       {/* <Head>
         <title>The Market Is Giving You a Gift. Most Will Refuse It.</title>
       </Head> */}
-      <SEO title={`The Market Is Giving You a Gift. Most Will Refuse It.`} 
-      image={`https://www.lnprcapital.com/images/article-one-image-updated.jpg`}
-      description={`When fear rules the street and screens turn red, the seeds of the next bull market are being quietly planted.`}
-      url={`https://www.lnprcapital.com/article-one`} 
-      contentType="article"
+      <SEO
+        title="The Market Is Giving You a Gift. Most Will Refuse It."
+        description="When fear dominates markets and screens turn red, the foundations of the next bull cycle are quietly forming. The real question is — will you act this time?"
+        image={`https://www.lnprcapital.com/api/og?title=${encodeURIComponent(
+          "The Market Is Giving You a Gift",
+        )}`}
+        url="https://www.lnprcapital.com/article-one"
+        contentType="article"
       />
-      
+
       {/* MASTHEAD */}
       <div className="masthead">
         <div className="masthead-pub">LNPR Capital · Equity Research</div>
@@ -68,13 +70,18 @@ export default function ArticleOne() {
       </div>
       <div className="card-img-placeholder">
         {/* <PlaceholderIcon type={resource.iconType} size={resource.iconSize} /> */}
-        <a href={`https://www.lnprcapital.com/images/article-one-image-updated.jpg`} target="_blank" rel="noreferrer">
-        <Image
-          src={`/images/article-one-image.png`}
-          alt={`The Market Is Giving You a Gift. Most Will Refuse It.`}
-          width={1000}
-          height={1000}
-        /></a>
+        <a
+          href={`https://www.lnprcapital.com/images/article-one-image-updated.jpg`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src={`/images/article-one-image.png`}
+            alt={`The Market Is Giving You a Gift. Most Will Refuse It.`}
+            width={1000}
+            height={1000}
+          />
+        </a>
       </div>
       {/* BODY */}
       <div className="article-body">
