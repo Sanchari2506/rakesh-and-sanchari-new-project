@@ -52,7 +52,7 @@ const CASE_STUDIES = [
   title: "Ashapura Minechem Limited",
   status: "holding",
   sector: "Multi-Mineral Mining & Processing",
-  reportFile: "Ashapura Minechem Limited - LNPR REPORT.pdf",
+  reportFile: "/case-studies/Ashapura_Minechem_Premium.pdf",
   recoPrice: "₹370 / share",
   exitPrice: "₹730 / share",
   thesis: `A global mineral leader with operations across 90+ countries and top-3 positions in bentonite and bleaching clay. 
@@ -72,7 +72,7 @@ However, the investment case depends heavily on volume growth offsetting declini
   title: "Stallion India Fluorochemicals Limited",
   status: "exited",
   sector: "Fluorochemicals — Refrigerants & Specialty",
-  reportFile: "Stallion India Fluorochemicals Limited.pdf",
+  reportFile: "/case-studies/Stallion_India_Fluorochemicals_Premium.pdf",
   recoPrice: "₹150 / share",
   exitPrice: "₹405 / share",
   thesis: `A near debt-free fluorochemical company benefiting from India's AC penetration boom. 
