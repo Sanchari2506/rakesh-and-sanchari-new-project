@@ -358,7 +358,7 @@ export default function Home() {
       <SEO
         title="LNPR Capital | Investment & Financial Advisory"
         description="LNPR Capital is an independent equity research firm offering subscription-based research with a strong 'Skin in the Game' philosophy."
-        image={`https://www.lnprcapital.com/images/article-one-image.png`}
+        image={`https://www.lnprcapital.com/images/article-one-image-updated.jpg`}
         url="https://www.lnprcapital.com/"
         contentType="website"
       />

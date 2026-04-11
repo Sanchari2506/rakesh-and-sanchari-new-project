@@ -16,7 +16,7 @@ export default function ArticleOne() {
         <title>The Market Is Giving You a Gift. Most Will Refuse It.</title>
       </Head> */}
       <SEO title={`The Market Is Giving You a Gift. Most Will Refuse It.`} 
-      image={`https://www.lnprcapital.com/images/article-one-image.png`}
+      image={`https://www.lnprcapital.com/images/article-one-image-updated.jpg`}
       description={`When fear rules the street and screens turn red, the seeds of the next bull market are being quietly planted. History keeps saying this. The question is — are you listening this time?`}
       url={`https://www.lnprcapital.com/article-one`} 
       contentType="article"

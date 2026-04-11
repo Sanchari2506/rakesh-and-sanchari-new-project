@@ -528,7 +528,7 @@ export default function Resources() {
     <div ref={pageRef} className="resources-page">
       <SEO
         title={`LNPR Capital | Research & Insights on Indian Small & Micro-Cap Investing`}
-        image={`https://www.lnprcapital.com/images/footerlogo.png`}
+        image={`https://www.lnprcapital.com/images/article-one-image-updated.jpg`}
         description={`Articles, deep dives, and video conversations on Indian small & micro-cap investing — curated for the serious, long-term investor.`}
         url={`https://www.lnprcapital.com/resources`}
         contentType="website"
