@@ -3,12 +3,23 @@ import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import SEO from "../components/SEO";
+import Footer from "../components/Footer";
+
 
 export default function ArticleOne() {
   const router = useRouter();
   const pageRef = useRef(null);
   return (
     <div className="article-one-page" ref={pageRef}>
+      {/* <Head>
+        <title>The Market Is Giving You a Gift. Most Will Refuse It.</title>
+      </Head> */}
+      <SEO title={`The Market Is Giving You a Gift. Most Will Refuse It.`} 
+      image={`https://www.lnprcapital.com/images/article-one-image.png`}
+      description={`When fear rules the street and screens turn red, the seeds of the next bull market are being quietly planted. History keeps saying this. The question is — are you listening this time?`}
+      url={`https://www.lnprcapital.com/article-one`} />
+      
       {/* MASTHEAD */}
       <div className="masthead">
         <div className="masthead-pub">LNPR Capital · Equity Research</div>

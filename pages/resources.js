@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import SEO from "../components/SEO";
+import Footer from "../components/Footer";
 
 const FILTER_OPTIONS = [
   { value: "all", label: "All" },
@@ -19,8 +21,7 @@ const FEATURED_MAIN = {
   category: "Market Analysis",
   date: "April 2026",
   read: "",
-  title:
-    "The Market Is Giving You a Gift. Most Will Refuse It.",
+  title: "The Market Is Giving You a Gift. Most Will Refuse It.",
   excerpt:
     "When fear rules the street and screens turn red, the seeds of the next bull market are being quietly planted. History keeps saying this. The question is — are you listening this time?",
   linkLabel: "Read Full Article",
@@ -443,7 +444,7 @@ export default function Resources() {
       <div className="card-img-placeholder">
         {/* <PlaceholderIcon type={resource.iconType} size={resource.iconSize} /> */}
         <Image
-          src={`/images/article-one-image.png`}  
+          src={`/images/article-one-image.png`}
           alt={resource.title}
           width={900}
           height={500}
@@ -525,9 +526,12 @@ export default function Resources() {
 
   return (
     <div ref={pageRef} className="resources-page">
-      <Head>
-        <title>Resources | LNPR Capital</title>
-      </Head>
+      <SEO
+        title={`LNPR Capital | Research & Insights on Indian Small & Micro-Cap Investing`}
+        image={`https://www.lnprcapital.com/images/footerlogo.png`}
+        description={`Articles, deep dives, and video conversations on Indian small & micro-cap investing — curated for the serious, long-term investor.`}
+        url={`https://www.lnprcapital.com/resources`}
+      />
 
       {/* PAGE HERO */}
       <section className="page-hero fade-up">
