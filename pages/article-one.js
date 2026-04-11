@@ -17,7 +17,7 @@ export default function ArticleOne() {
       </Head> */}
       <SEO title={`The Market Is Giving You a Gift. Most Will Refuse It.`} 
       image={`https://www.lnprcapital.com/images/article-one-image-updated.jpg`}
-      description={`When fear rules the street and screens turn red, the seeds of the next bull market are being quietly planted. History keeps saying this. The question is — are you listening this time?`}
+      description={`When fear rules the street and screens turn red, the seeds of the next bull market are being quietly planted.`}
       url={`https://www.lnprcapital.com/article-one`} 
       contentType="article"
       />
@@ -68,12 +68,13 @@ export default function ArticleOne() {
       </div>
       <div className="card-img-placeholder">
         {/* <PlaceholderIcon type={resource.iconType} size={resource.iconSize} /> */}
+        <a href={`https://www.lnprcapital.com/images/article-one-image-updated.jpg`} target="_blank" rel="noreferrer">
         <Image
           src={`/images/article-one-image.png`}
           alt={`The Market Is Giving You a Gift. Most Will Refuse It.`}
-          width={900}
+          width={1000}
           height={1000}
-        />
+        /></a>
       </div>
       {/* BODY */}
       <div className="article-body">
