@@ -2,11 +2,13 @@ import React from "react";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function ArticleOne() {
   const router = useRouter();
+  const pageRef = useRef(null);
   return (
-    <div className="article-one-page">
+    <div className="article-one-page" ref={pageRef}>
       {/* MASTHEAD */}
       <div className="masthead">
         <div className="masthead-pub">LNPR Capital · Equity Research</div>
@@ -17,7 +19,9 @@ export default function ArticleOne() {
 
       <div className="date-line">
         <span>April 2026</span>
-        <span className="section-label" style={{marginBottom:'0px'}}>Special Commentary</span>
+        <span className="section-label" style={{ marginBottom: "0px" }}>
+          Special Commentary
+        </span>
         <span>SEBI Reg. · INH000012953</span>
       </div>
 
@@ -49,7 +53,15 @@ export default function ArticleOne() {
           Founder &amp; Research Analyst · LNPR Capital
         </div>
       </div>
-
+      <div className="card-img-placeholder">
+        {/* <PlaceholderIcon type={resource.iconType} size={resource.iconSize} /> */}
+        <Image
+          src={`/images/article-one-image.png`}
+          alt={`The Market Is Giving You a Gift. Most Will Refuse It.`}
+          width={900}
+          height={1000}
+        />
+      </div>
       {/* BODY */}
       <div className="article-body">
         <p className="first-para">

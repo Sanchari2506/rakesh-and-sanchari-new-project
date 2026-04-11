@@ -1589,8 +1589,8 @@ footer {
 /* ── WHATSAPP FLOAT ── */
 .wa-float {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
+  bottom: 20px;
+  right: 10px;
   z-index: 999;
   width: 54px;
   height: 54px;
@@ -1842,6 +1842,7 @@ footer {
 
 .card-img-placeholder {
   width: 100%;
+  height: 500px;
   aspect-ratio: 16/9;
   background: linear-gradient(135deg, #161614 0%, #1e1d1a 100%);
   display: flex;
@@ -2560,6 +2561,14 @@ footer {
 
   .hero {
     padding-right: 60px;
+  }
+  .card-img-placeholder{
+    width: auto;
+    height: auto;
+    aspect-ratio: auto;
+  }
+  .article-one-page .byline-block{
+    margin-bottom: 20px;
   }
 }
 

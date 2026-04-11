@@ -154,7 +154,7 @@ export default function Footer() {
         target="_blank"
         rel="noreferrer"
       >
-        💬
+        <img src="/images/WhatsApp_icon.png" alt="whatsapp" style={{width:'40px', height:'40px'}} />
       </a>
     </>
   );
