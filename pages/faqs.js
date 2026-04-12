@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import SEO from "../components/SEO";
 
 export default function Faqs() {
   const faqs = [
@@ -50,47 +51,56 @@ export default function Faqs() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10">
-      <h1 className="text-3xl font-semibold mb-6 text-center">
-        Frequently Asked Questions
-      </h1>
+    <>
+      <SEO
+        title="LNPR Capital | Investment & Financial Advisory"
+        description="LNPR Capital is an independent equity research firm offering subscription-based research with a strong 'Skin in the Game' philosophy."
+        image={`https://www.lnprcapital.com/images/og-logo-updated.jpg`}
+        url="https://www.lnprcapital.com/"
+        contentType="website"
+      />
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        <h1 className="text-3xl font-semibold mb-6 text-center">
+          Frequently Asked Questions
+        </h1>
 
-      <div className="space-y-4">
-        {faqs.map(({ question, answer }, index) => (
-          <div
-            key={index}
-            className="border rounded-md overflow-hidden bg-white"
-          >
-            <button
-              onClick={() => toggle(index)}
-              className="w-full text-left px-4 py-3 flex items-center justify-between focus:outline-none"
-              aria-expanded={openIndex === index}
-            >
-              <span className="font-semibold text-[#0a3758]">{question}</span>
-              <span
-                className={`transform transition-transform duration-200 ${
-                  openIndex === index ? "rotate-180" : ""
-                }`}
-              >
-                ▾
-              </span>
-            </button>
-
+        <div className="space-y-4">
+          {faqs.map(({ question, answer }, index) => (
             <div
-              ref={(el) => (panels.current[index] = el)}
-              className="overflow-hidden transition-[max-height] duration-300"
-              style={{
-                maxHeight:
-                  openIndex === index && panels.current[index]
-                    ? `${panels.current[index].scrollHeight}px`
-                    : "0px",
-              }}
+              key={index}
+              className="border rounded-md overflow-hidden bg-white"
             >
-              <div className="px-4 py-3 text-gray-700">{answer}</div>
+              <button
+                onClick={() => toggle(index)}
+                className="w-full text-left px-4 py-3 flex items-center justify-between focus:outline-none"
+                aria-expanded={openIndex === index}
+              >
+                <span className="font-semibold text-[#0a3758]">{question}</span>
+                <span
+                  className={`transform transition-transform duration-200 ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
+                >
+                  ▾
+                </span>
+              </button>
+
+              <div
+                ref={(el) => (panels.current[index] = el)}
+                className="overflow-hidden transition-[max-height] duration-300"
+                style={{
+                  maxHeight:
+                    openIndex === index && panels.current[index]
+                      ? `${panels.current[index].scrollHeight}px`
+                      : "0px",
+                }}
+              >
+                <div className="px-4 py-3 text-gray-700">{answer}</div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

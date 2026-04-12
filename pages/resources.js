@@ -525,96 +525,96 @@ export default function Resources() {
   );
 
   return (
-    <div ref={pageRef} className="resources-page">
+    <>
       <SEO
         title={`LNPR Capital | Research & Insights on Indian Small & Micro-Cap Investing`}
-        image={`https://www.lnprcapital.com/images/article-one-image-updated.jpg`}
+        image={`https://www.lnprcapital.com/images/og-logo-updated.jpg`}
         description={`Articles, deep dives, and video conversations on Indian small & micro-cap investing — curated for the serious, long-term investor.`}
         url={`https://www.lnprcapital.com/resources`}
         contentType="website"
       />
+      <div ref={pageRef} className="resources-page">
+        {/* PAGE HERO */}
+        <section className="page-hero fade-up">
+          <div className="section-label">Knowledge Centre</div>
+          <h1>
+            Research &amp; <em>Insights</em>
+          </h1>
+          <p>
+            Articles, deep dives, and video conversations on Indian small &amp;
+            micro-cap investing — curated for the serious, long-term investor.
+          </p>
+        </section>
 
-      {/* PAGE HERO */}
-      <section className="page-hero fade-up">
-        <div className="section-label">Knowledge Centre</div>
-        <h1>
-          Research &amp; <em>Insights</em>
-        </h1>
-        <p>
-          Articles, deep dives, and video conversations on Indian small &amp;
-          micro-cap investing — curated for the serious, long-term investor.
-        </p>
-      </section>
-
-      {/* FILTER BAR */}
-      <div className="filter-bar-wrapper">
-        <div className="inner-filter-wrapper">
-          <span className="filter-label">Filter by</span>
-          <div className="filter-bar">
-            {FILTER_OPTIONS.map((filter) => (
-              <button
-                key={filter.value}
-                type="button"
-                className={`filter-btn${
-                  activeFilter === filter.value ? " active" : ""
-                }`}
-                onClick={() => setActiveFilter(filter.value)}
-              >
-                {filter.label}
-              </button>
-            ))}
-            {/* <div className="filter-sep"></div> */}
-          </div>
-          <div className="search-wrap">
-            <SearchIcon />
-            <input
-              type="text"
-              placeholder="Search resources…"
-              value={searchQuery}
-              onChange={(event) => setSearchQuery(event.target.value)}
-            />
+        {/* FILTER BAR */}
+        <div className="filter-bar-wrapper">
+          <div className="inner-filter-wrapper">
+            <span className="filter-label">Filter by</span>
+            <div className="filter-bar">
+              {FILTER_OPTIONS.map((filter) => (
+                <button
+                  key={filter.value}
+                  type="button"
+                  className={`filter-btn${
+                    activeFilter === filter.value ? " active" : ""
+                  }`}
+                  onClick={() => setActiveFilter(filter.value)}
+                >
+                  {filter.label}
+                </button>
+              ))}
+              {/* <div className="filter-sep"></div> */}
+            </div>
+            <div className="search-wrap">
+              <SearchIcon />
+              <input
+                type="text"
+                placeholder="Search resources…"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* MAIN CONTENT */}
-      <div className="main-content-wrap">
-        <div className="resources-wrap">
-          {/* FEATURED */}
-          {showFeatured ? (
-            <div className="featured-grid" id="featured-section">
-              {featuredMainVisible ? (
-                <div className="featured-main" data-type={FEATURED_MAIN.type}>
-                  {renderCardImage(FEATURED_MAIN)}
-                  <div className="card-body">
-                    <CardMeta
-                      category={FEATURED_MAIN.category}
-                      date={FEATURED_MAIN.date}
-                      read={FEATURED_MAIN.read}
-                    />
-                    <h2 className="card-title">{FEATURED_MAIN.title}</h2>
-                    <p className="card-excerpt">{FEATURED_MAIN.excerpt}</p>
-                    <a
-                      href={FEATURED_MAIN.linkURL}
-                      className="card-link"
-                      onClick={preventPlaceholderNavigation}
-                    >
-                      {FEATURED_MAIN.linkLabel} <ArrowIcon size={12} />
-                    </a>
+        {/* MAIN CONTENT */}
+        <div className="main-content-wrap">
+          <div className="resources-wrap">
+            {/* FEATURED */}
+            {showFeatured ? (
+              <div className="featured-grid" id="featured-section">
+                {featuredMainVisible ? (
+                  <div className="featured-main" data-type={FEATURED_MAIN.type}>
+                    {renderCardImage(FEATURED_MAIN)}
+                    <div className="card-body">
+                      <CardMeta
+                        category={FEATURED_MAIN.category}
+                        date={FEATURED_MAIN.date}
+                        read={FEATURED_MAIN.read}
+                      />
+                      <h2 className="card-title">{FEATURED_MAIN.title}</h2>
+                      <p className="card-excerpt">{FEATURED_MAIN.excerpt}</p>
+                      <a
+                        href={FEATURED_MAIN.linkURL}
+                        className="card-link"
+                        onClick={preventPlaceholderNavigation}
+                      >
+                        {FEATURED_MAIN.linkLabel} <ArrowIcon size={12} />
+                      </a>
+                    </div>
                   </div>
-                </div>
-              ) : null}
+                ) : null}
 
-              {/* {featuredAsideVisible.length ? (
+                {/* {featuredAsideVisible.length ? (
                 <div className="featured-aside">
                   {featuredAsideVisible.map(renderFeaturedAsideCard)}
                 </div>
               ) : null} */}
-            </div>
-          ) : null}
+              </div>
+            ) : null}
 
-          {/* LATEST ARTICLES */}
-          {/* {showArticles ? (
+            {/* LATEST ARTICLES */}
+            {/* {showArticles ? (
             <>
               <div className="section-header scroll-anim" id="articles-header">
                 <h2>
@@ -635,12 +635,12 @@ export default function Resources() {
             </>
           ) : null} */}
 
-          {/* {showVideos && (showFeatured || showArticles) ? (
+            {/* {showVideos && (showFeatured || showArticles) ? (
             <div className="gold-divider"></div>
           ) : null} */}
 
-          {/* VIDEOS */}
-          {/* {showVideos ? (
+            {/* VIDEOS */}
+            {/* {showVideos ? (
             <>
               <div className="section-header scroll-anim" id="videos-header">
                 <h2>
@@ -661,12 +661,12 @@ export default function Resources() {
             </>
           ) : null} */}
 
-          {/* {showReports && (showFeatured || showArticles || showVideos) ? (
+            {/* {showReports && (showFeatured || showArticles || showVideos) ? (
             <div className="gold-divider"></div>
           ) : null} */}
 
-          {/* RESEARCH NOTES */}
-          {/* {showReports ? (
+            {/* RESEARCH NOTES */}
+            {/* {showReports ? (
             <>
               <div className="section-header scroll-anim" id="reports-header">
                 <h2>
@@ -686,43 +686,44 @@ export default function Resources() {
               </div>
             </>
           ) : null} */}
+          </div>
         </div>
-      </div>
 
-      <style jsx global>{`
-        @keyframes resourcesFadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(24px);
+        <style jsx global>{`
+          @keyframes resourcesFadeUp {
+            from {
+              opacity: 0;
+              transform: translateY(24px);
+            }
+
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
           }
 
-          to {
+          .resources-page .fade-up {
+            animation: resourcesFadeUp 0.6s ease forwards;
+          }
+
+          .resources-page .scroll-anim {
+            opacity: 0;
+            transform: translateY(20px);
+            transition:
+              opacity 0.55s ease,
+              transform 0.55s ease;
+          }
+
+          .resources-page .scroll-anim.visible {
             opacity: 1;
             transform: translateY(0);
           }
-        }
 
-        .resources-page .fade-up {
-          animation: resourcesFadeUp 0.6s ease forwards;
-        }
-
-        .resources-page .scroll-anim {
-          opacity: 0;
-          transform: translateY(20px);
-          transition:
-            opacity 0.55s ease,
-            transform 0.55s ease;
-        }
-
-        .resources-page .scroll-anim.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .resources-page .card-link-sm {
-          font-size: 11px;
-        }
-      `}</style>
-    </div>
+          .resources-page .card-link-sm {
+            font-size: 11px;
+          }
+        `}</style>
+      </div>
+    </>
   );
 }

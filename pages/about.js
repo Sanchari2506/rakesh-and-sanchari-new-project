@@ -1,4 +1,6 @@
 import { MdOutlinePersonSearch } from "react-icons/md";
+import { useRef, useState } from "react";
+import SEO from "../components/SEO";
 export default function AboutUs() {
   const services = [
     {
@@ -41,6 +43,13 @@ export default function AboutUs() {
 
   return (
     <>
+      <SEO
+        title="LNPR Capital | Investment & Financial Advisory"
+        description="LNPR Capital is an independent equity research firm offering subscription-based research with a strong 'Skin in the Game' philosophy."
+        image={`https://www.lnprcapital.com/images/og-logo-updated.jpg`}
+        url="https://www.lnprcapital.com/"
+        contentType="website"
+      />
       <div className="max-w-7xl mx-auto relative md:mb-40">
         <div className="banner-wrapper w-full h-[300px] md:h-[500px]">
           <img
@@ -98,7 +107,6 @@ export default function AboutUs() {
         })}
       </div>
 
-
       <div className="md:max-w-7xl mr-[20px] md:mx-auto w-full md:w-[80%] team-details-content mb-20">
         <h3 className="text-center text-[#ffcf76] text-3xl font-bold">
           Meet Our Team
@@ -123,7 +131,6 @@ export default function AboutUs() {
           decisions and achieve their financial aspirations.
         </p>
       </div>
-
 
       {/* founder section  */}
       <div className="w-[90%] md:max-w-7xl mx-auto founder-details-content mb-20">
