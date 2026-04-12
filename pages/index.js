@@ -20,7 +20,7 @@ Leading Indian mineral company based in Mumbai.
 It produces and exports minerals like bentonite & bauxite. 
 The company serves industries such as oil, steel, and construction worldwide.
 
-46%.                                   65%
+46%.                  65%
 Revenue CAGR          PAT CAGR
 
 23%                                  13
@@ -29,157 +29,63 @@ ROE 5yrs                     P/E At Exit
 RETURNS DELIVERED  97% in 08 months
 
 */
+/* 
+Exited                 Chemical Industry
+Stallion India Fluorochemicals Ltd
+Reco Price: ₹150 / share • Exited at ₹405
+
+Co. manufactures & supplies refrigerant gases and fluorochemicals. 
+It serves industries like HVAC, automotive, electronics in India & abroad.
+
+62%                   109%
+Revenue CAGR          PAT CAGR
+
+20%                       0
+ROCE At Exit              D/E At Exit
+
+RETURNS DELIVERED  170% in 02 months
+*/
 
 const CASE_STUDIES = [
-  //   {
-  //     title: "Ashapura Minechem Limited",
-  //     status: "exited",
-  //     sector: "Multi-Mineral Mining & Processing",
-  //     reportFile: "Ashapura Minechem Limited - LNPR REPORT.pdf",
-  //     recoPrice: "₹370 / share",
-  //     exitPrice: "₹730 / share",
-  //     thesis: `Leading Indian mineral company based in Mumbai.
-  // It produces and exports minerals like bentonite & bauxite.
-  // The company serves industries such as oil, steel, and construction worldwide.`,
-  //     metrics: [
-  //       { value: "46%", label: "Revenue CAGR" },
-  //       { value: "65%", label: "PAT CAGR" },
-  //       { value: "23%", label: "ROE 5yrs" },
-  //       { value: "13", label: "P/E at Exit" },
-  //     ],
-  //     returnLabel: "RETURNS DELIVERED",
-  //     returnValue: "97%",
-  //     returnValueMonths: "in 08 months",
-  //   },
   {
     title: "Ashapura Minechem Limited",
-    status: "holding",
-    sector: "Multi-Mineral Mining & Processing",
+    status: "exited",
+    sector: "Metals & Mining",
     reportFile: "/case-studies/Ashapura_Minechem_Premium.pdf",
     recoPrice: "₹370 / share",
     exitPrice: "₹730 / share",
-    thesis: `A global mineral leader with operations across 90+ countries and top-3 positions in bentonite and bleaching clay. 
-The company’s growth is driven by its Guinea bauxite operations contributing ~76% of revenue. 
-However, the investment case depends heavily on volume growth offsetting declining bauxite prices, making it a high-risk, high-upside commodity play.`,
+    thesis: `Leading Indian mineral company based in Mumbai.
+It produces and exports minerals like bentonite & bauxite. 
+The company serves industries such as oil, steel, and construction worldwide.`,
     metrics: [
-      { value: "50%", label: "Revenue Growth (9M FY26 YoY)" },
-      { value: "14.2%", label: "EBITDA Margin (9M FY26)" },
-      { value: "9.3%", label: "PBT Margin (9M FY26)" },
-      { value: "76%", label: "Revenue from Guinea" },
+      { value: "46%", label: "Revenue CAGR" },
+      { value: "65%", label: "PAT CAGR" },
+      { value: "23%", label: "ROE 5yrs" },
+      { value: "13", label: "P/E At Exit" },
     ],
     returnLabel: "RETURNS DELIVERED",
-    returnValue: "170%",
-    returnValueMonths: "in 02 months",
+    returnValue: "97%",
+    returnValueMonths: "in 08 months",
   },
   {
-    title: "Stallion India Fluorochemicals Limited",
+    title: "Stallion India Fluorochemicals Ltd",
     status: "exited",
-    sector: "Fluorochemicals — Refrigerants & Specialty",
+    sector: "Chemical Industry",
     reportFile: "/case-studies/Stallion_India_Fluorochemicals_Premium.pdf",
     recoPrice: "₹150 / share",
     exitPrice: "₹405 / share",
-    thesis: `A near debt-free fluorochemical company benefiting from India's AC penetration boom. 
-  It operates as a refrigerant blending and distribution player with strong ROCE and margins. 
-  However, the long-term investment thesis depends on its ability to transition from HFCs to next-gen HFO refrigerants amid regulatory phase-down risks.`,
+    thesis: `Co. manufactures & supplies refrigerant gases and fluorochemicals. 
+    It serves industries like HVAC, automotive, electronics in India & abroad.`,
     metrics: [
-      { value: "18–22%", label: "Revenue Growth Outlook" },
-      { value: "12–13%", label: "PAT Margin" },
-      { value: "20%", label: "ROCE" },
-      { value: "0.01x", label: "D/E" },
+      { value: "62%", label: "Revenue CAGR" },
+      { value: "109%", label: "PAT CAGR" },
+      { value: "20%", label: "ROCE At Exit" },
+      { value: "0", label: "D/E At Exit" },
     ],
     returnLabel: "RETURNS DELIVERED",
     returnValue: "170%",
     returnValueMonths: "in 02 months",
-  },
-  // {
-  //     title: "Stallion India Fluorochemicals Ltd",
-  //     status: "exited",
-  //     sector: "Chemical Industry",
-  //     reportFile: "Stallion India Fluorochemicals Limited.pdf",
-  //     recoPrice: "₹150 / share",
-  //     exitPrice: "₹405 / share",
-  //     thesis: `Co. manufactures & supplies refrigerant gases and fluorochemicals.
-  //     It serves industries like HVAC, automotive, electronics in India & abroad.`,
-  //     metrics: [
-  //       { value: "62%", label: "Revenue CAGR" },
-  //       { value: "109%", label: "PAT CAGR" },
-  //       { value: "20%", label: "ROCE At Exit" },
-  //       { value: "0", label: "D/E At Exit" },
-  //     ],
-  //     returnLabel: "RETURNS DELIVERED",
-  //     returnValue: "170%",
-  //     returnValueMonths: "in 02 months",
-  //   },
-  // {
-  //   title: "PQR Consumer Ltd",
-  //   status: "holding",
-  //   sector: "Consumer Goods",
-  //   recoPrice: "₹XXX / share",
-  //   thesis:
-  //     "An under-the-radar consumer brand with dominant regional presence, transitioning to a national footprint. Asset-light model with high cash generation and zero debt provides significant margin of safety.",
-  //   metrics: [
-  //     { value: "XX%", label: "Revenue CAGR" },
-  //     { value: "XX%", label: "RoE" },
-  //     { value: "Zero", label: "Net Debt" },
-  //     { value: "XXx", label: "P/E (FY25e)" },
-  //   ],
-  //   returnLabel: "Target Price",
-  //   returnValue: "₹XXX",
-  // },
-  // {
-  //   title: "DEF Defence Ltd",
-  //   status: "exited",
-  //   sector: "Defence & Aerospace",
-  //   recoPrice: "₹XXX / share",
-  //   exitPrice: "₹XXX",
-  //   thesis:
-  //     "Recommended on the thesis of significant indigenisation push by GoI presenting a multi-year growth runway, with a strong order pipeline across helicopters, aircraft, and engine segments worth $35-40 billion.",
-  //   metrics: [
-  //     { value: "XX%", label: "Revenue CAGR" },
-  //     { value: "XX%", label: "PAT CAGR" },
-  //     { value: "XX%", label: "RoE" },
-  //     { value: "Net Cash", label: "Balance Sheet" },
-  //   ],
-  //   returnLabel: "Returns Delivered",
-  //   returnValue: "X.Xx",
-  //   returnNote: "in XX months",
-  // },
-  // {
-  //   title: "GHI Engineering Ltd",
-  //   status: "exited",
-  //   sector: "Capital Goods",
-  //   recoPrice: "₹XXX / share",
-  //   exitPrice: "₹XXX",
-  //   thesis:
-  //     "A proxy play on India's water and energy capex recovery. New product introductions and a focus on exports and service revenue provided a strong earnings upgrade cycle over the holding period.",
-  //   metrics: [
-  //     { value: "XX%", label: "Revenue Growth" },
-  //     { value: "XX%", label: "EBITDA Growth" },
-  //     { value: "XX%", label: "PAT Growth" },
-  //     { value: "₹XXCr", label: "New Order Win" },
-  //   ],
-  //   returnLabel: "Returns Delivered",
-  //   returnValue: "X.Xx",
-  //   returnNote: "in XX months",
-  // },
-  // {
-  //   title: "JKL Tech Ltd",
-  //   status: "exited",
-  //   sector: "Technology",
-  //   recoPrice: "₹XXX / share",
-  //   exitPrice: "₹XXX",
-  //   thesis:
-  //     "Recommended on the thesis of rising EV investments by global auto OEMs driving demand for Auto ER&D services. Margin expansion from better utilisation and order inflows provided a significant re-rating catalyst.",
-  //   metrics: [
-  //     { value: "XX%", label: "Margin at Reco" },
-  //     { value: "XX%", label: "Margin at Exit" },
-  //     { value: "XXx", label: "P/E at Reco" },
-  //     { value: "XXx", label: "P/E at Exit" },
-  //   ],
-  //   returnLabel: "Returns Delivered",
-  //   returnValue: "X.Xx",
-  //   returnNote: "in XX months",
-  // },
+  }
 ];
 
 const EXITED_CASE_STUDY_RETURN_STYLE = {
