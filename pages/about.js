@@ -44,7 +44,7 @@ export default function AboutUs() {
   return (
     <>
       <SEO
-        title="LNPR Capital | Investment & Financial Advisory"
+        title="LNPR Capital | A Boutique Research Firm"
         description="LNPR Capital is an independent equity research firm offering subscription-based research with a strong 'Skin in the Game' philosophy."
         image={`https://www.lnprcapital.com/images/og-logo-updated.jpg`}
         url="https://www.lnprcapital.com/"

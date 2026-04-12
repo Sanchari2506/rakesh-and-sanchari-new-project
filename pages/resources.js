@@ -527,7 +527,7 @@ export default function Resources() {
   return (
     <>
       <SEO
-        title={`LNPR Capital | Research & Insights on Indian Small & Micro-Cap Investing`}
+        title={`LNPR Capital | A Boutique Research Firm`}
         image={`https://www.lnprcapital.com/images/og-logo-updated.jpg`}
         description={`Articles, deep dives, and video conversations on Indian small & micro-cap investing — curated for the serious, long-term investor.`}
         url={`https://www.lnprcapital.com/resources`}
