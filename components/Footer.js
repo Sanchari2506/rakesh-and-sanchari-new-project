@@ -20,7 +20,10 @@ export default function Footer() {
       <footer>
         <div className="footer-top">
           <div className="footer-brand">
-            <span className="logo-f">LNPR Capital</span>
+            <div className="nav-logo-icon">
+              <img src="/images/logo-footer-transparent.png" alt="LNPR Capital" />
+            </div>
+            {/* <span className="logo-f">LNPR Capital</span> */}
             <span className="tagline-f">A Boutique Research House</span>
             <p>
               We aim to be a trustworthy, reliable, and professional equity
@@ -110,9 +113,7 @@ export default function Footer() {
             <div className="footer-contact-item">
               <span className="ic">✉</span>
               <p>
-                <a href="mailto:info@lnprcapital.com">
-                  info@lnprcapital.com
-                </a>
+                <a href="mailto:info@lnprcapital.com">info@lnprcapital.com</a>
               </p>
             </div>
           </div>
@@ -154,7 +155,11 @@ export default function Footer() {
         target="_blank"
         rel="noreferrer"
       >
-        <img src="/images/WhatsApp_icon.png" alt="whatsapp" style={{width:'40px', height:'40px'}} />
+        <img
+          src="/images/WhatsApp_icon.png"
+          alt="whatsapp"
+          style={{ width: "40px", height: "40px" }}
+        />
       </a>
     </>
   );

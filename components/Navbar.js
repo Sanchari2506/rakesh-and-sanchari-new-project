@@ -50,7 +50,7 @@ export default function Navbar() {
     <nav>
       <a href="/" className="nav-logo" onClick={closeMobileMenu}>
         <div className="nav-logo-icon">
-          <img src="/images/logo.svg" alt="LNPR Capital" />
+          <img src="/images/header-logo.jpg" alt="LNPR Capital" />
         </div>
       </a>
       <button
