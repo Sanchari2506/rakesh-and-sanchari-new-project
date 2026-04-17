@@ -15,7 +15,13 @@ function ResearchNote() {
 
   return (
     <>
-      <SEO title="India's Copper Recycling Supercycle Is Just Beginning" />
+      <SEO
+        title="India's Copper Recycling Supercycle Is Just Beginning"
+        description="Thematic Research Note Circular Economy Series 07 April 2026"
+        image={`https://www.lnprcapital.com/images/article-og-img.jpg`}
+        url="https://www.lnprcapital.com/article-one"
+        contentType="article"
+      />
 
       <div className="research-note-one-page" style={pageTheme}>
         <div className="page">
@@ -659,7 +665,11 @@ function ResearchNote() {
                 </div>
               </div>
 
-              <div className="table-scroll" role="region" aria-label="Company comparison table">
+              <div
+                className="table-scroll"
+                role="region"
+                aria-label="Company comparison table"
+              >
                 <table>
                   <thead>
                     <tr>
