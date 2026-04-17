@@ -19,7 +19,7 @@ const FEATURED_MAIN = {
   iconType: "article",
   iconSize: 48,
   category: "Market Analysis",
-  date: "April 2026",
+  date: "05 April 2026",
   read: "",
   title: "The Market Is Giving You a Gift. Most Will Refuse It.",
   excerpt:
@@ -27,6 +27,7 @@ const FEATURED_MAIN = {
   linkLabel: "Read Full Article",
   linkURL: "/article-one",
   showOverlay: true,
+  image: "/images/article-one-image.png",
 };
 
 const FEATURED_ASIDE = [
@@ -51,7 +52,7 @@ const FEATURED_ASIDE = [
     iconType: "report",
     iconSize: 36,
     category: "Sector Watch",
-    read: "Q1 2026",
+    read: "07 April 2026",
     title: "Capital Goods Renaissance: 3 Structural Themes Driving the Sector",
     linkLabel: "Read Note",
     linkURL: "#",
@@ -74,6 +75,7 @@ const ARTICLE_RESOURCES = [
     linkLabel: "Read More",
     linkURL: "/article-one",
     showOverlay: true,
+    image: "/images/article-one-image.png",
   },
   {
     type: "article",
@@ -89,6 +91,7 @@ const ARTICLE_RESOURCES = [
     linkLabel: "Read More",
     linkURL: "/article-two",
     showOverlay: true,
+    image: "/images/article-two-image.png",
   },
   {
     type: "article",
@@ -104,6 +107,7 @@ const ARTICLE_RESOURCES = [
     linkLabel: "Read More",
     linkURL: "/article-three",
     showOverlay: true,
+    image: "/images/article-three-image.png",
   },
 ];
 
@@ -170,41 +174,42 @@ const REPORT_RESOURCES = [
     iconType: "report",
     iconSize: 32,
     category: "Sector Outlook",
-    date: "Q1 2026",
-    title: "Specialty Chemicals: Post-China+1 Reality Check",
-    excerpt:
-      "Has the China+1 tailwind already been priced in? An honest sector-level assessment for 2026.",
+    date: "07 April 2026",
+    title: "India's Copper Recycling Supercycle Is Just Beginning",
+    excerpt:"The confluence of EPR mandates, energy transition demand, and a structurally broken primary supply chain is creating one of the most compelling multi-year opportunities in Indian materials.",
     linkLabel: "Read Note",
+    linkURL: "/research-note-one",
     showOverlay: true,
+    image: "/images/research-note-one.jpg",
   },
-  {
-    type: "report",
-    badgeLabel: "Research Note",
-    badgeClass: "badge-report",
-    iconType: "report",
-    iconSize: 32,
-    category: "Thematic",
-    date: "Feb 2026",
-    title: "Defence Manufacturing: Indigenisation at Inflection Point",
-    excerpt:
-      "India's defence offset policy is creating a new class of listed manufacturers worth watching closely.",
-    linkLabel: "Read Note",
-    showOverlay: true,
-  },
-  {
-    type: "report",
-    badgeLabel: "Research Note",
-    badgeClass: "badge-report",
-    iconType: "report",
-    iconSize: 32,
-    category: "SME Watch",
-    date: "Jan 2026",
-    title: "BSE SME Platform: FY26 Mid-Year Review & Listings Analysis",
-    excerpt:
-      "A quantitative look at FY26 SME listings: quality distribution, pricing, and post-listing performance patterns.",
-    linkLabel: "Read Note",
-    showOverlay: true,
-  },
+  // {
+  //   type: "report",
+  //   badgeLabel: "Research Note",
+  //   badgeClass: "badge-report",
+  //   iconType: "report",
+  //   iconSize: 32,
+  //   category: "Thematic",
+  //   date: "Feb 2026",
+  //   title: "Defence Manufacturing: Indigenisation at Inflection Point",
+  //   excerpt:
+  //     "India's defence offset policy is creating a new class of listed manufacturers worth watching closely.",
+  //   linkLabel: "Read Note",
+  //   showOverlay: true,
+  // },
+  // {
+  //   type: "report",
+  //   badgeLabel: "Research Note",
+  //   badgeClass: "badge-report",
+  //   iconType: "report",
+  //   iconSize: 32,
+  //   category: "SME Watch",
+  //   date: "Jan 2026",
+  //   title: "BSE SME Platform: FY26 Mid-Year Review & Listings Analysis",
+  //   excerpt:
+  //     "A quantitative look at FY26 SME listings: quality distribution, pricing, and post-listing performance patterns.",
+  //   linkLabel: "Read Note",
+  //   showOverlay: true,
+  // },
 ];
 
 const preventPlaceholderNavigation = (event) => {
@@ -444,7 +449,7 @@ export default function Resources() {
       <div className="card-img-placeholder">
         {/* <PlaceholderIcon type={resource.iconType} size={resource.iconSize} /> */}
         <Image
-          src={`/images/article-one-image.png`}
+          src={resource.image}
           alt={resource.title}
           width={900}
           height={500}
@@ -666,7 +671,7 @@ export default function Resources() {
           ) : null} */}
 
             {/* RESEARCH NOTES */}
-            {/* {showReports ? (
+            {showReports ? (
             <>
               <div className="section-header scroll-anim" id="reports-header">
                 <h2>
@@ -685,7 +690,7 @@ export default function Resources() {
                 {visibleReports.map(renderArticleCard)}
               </div>
             </>
-          ) : null} */}
+          ) : null}
           </div>
         </div>
 
