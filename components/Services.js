@@ -11,7 +11,7 @@ function Services() {
                 </p>
                 <ul class="list-disc md:list-inside md:space-y-2">
                   <li><strong>Market Cap:</strong> ₹100 Cr – ₹5,000 Cr</li>
-                  <li><strong>Ideas:</strong> 12–15 high-conviction research ideas annually</li>
+                  <li><strong>Ideas:</strong> 24-25 high-conviction research ideas annually</li>
                   <li><strong>Research:</strong> Comprehensive, in-depth reports</li>
                   <li><strong>Holding Period:</strong> 1–2 years</li>
                   <li><strong>Active Tracking:</strong> Clear exit calls provided.</li>
@@ -19,7 +19,8 @@ function Services() {
                 <p class="text-base mb-8">Focused. Research-driven. High-growth potential.</p>`,
 
       price: "INR 14,999 (1 year subscription)",
-      link: "https://lnprcapital.akamai.net.in/quick-pay/10/2",
+      // link: "https://lnprcapital.akamai.net.in/quick-pay/10/2",
+      link: "https://exly.live/xlkvg0",
     },
     {
       image: "/images/master-club.jpeg",
@@ -37,7 +38,8 @@ function Services() {
                 <p class="text-base mb-8">Disciplined. Research-backed. Growth-focused.</p>`,
 
       price: "INR 14,999 (1 year subscription)",
-      link: "https://lnprcapital.akamai.net.in/quick-pay/10/1",
+      // link: "https://lnprcapital.akamai.net.in/quick-pay/10/1",
+      link: "https://exly.live/z51F17",
     },
   ];
   return (

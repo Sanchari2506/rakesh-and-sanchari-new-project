@@ -523,7 +523,7 @@ export default function Home() {
                   <li>
                     <span className="icon">→</span>
                     <div>
-                      <strong>Ideas:</strong> 12–15 high-conviction research
+                      <strong>Ideas:</strong> 24-25 high-conviction research
                       ideas annually
                     </div>
                   </li>
@@ -560,7 +560,7 @@ export default function Home() {
                     ₹14,999 <small>/ year</small>
                   </div>
                   <a
-                    href="https://lnprcapital.akamai.net.in/quick-pay/10/2"
+                    href="https://exly.live/xlkvg0"
                     className="btn-gold"
                     target="_blank"
                     style={{ fontSize: "12px", padding: "12px 24px" }}
@@ -632,7 +632,7 @@ export default function Home() {
                     ₹14,999 <small>/ year</small>
                   </div>
                   <a
-                    href="https://lnprcapital.akamai.net.in/quick-pay/10/1"
+                    href="https://exly.live/z51F17"
                     className="btn-gold"
                     target="_blank"
                     style={{ fontSize: "12px", padding: "12px 24px" }}
