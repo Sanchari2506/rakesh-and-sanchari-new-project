@@ -33,9 +33,9 @@ export default function ResearchNote() {
     <>
       <SEO
         title="The Geopolitics Paradox: 30 Years of Indian Markets Against War, Terror & Global Shocks"
-        description="Thematic Research Note Circular Economy Series 07 April 2026"
-        image={`https://www.lnprcapital.com/images/imgNote2.jpg`}
-        url="https://www.lnprcapital.com/article-one"
+        description="Thematic Research Note Circular Economy Series 19 April 2026"
+        image={`https://www.lnprcapital.com/images/imgNote2ForShare.jpg`}
+        url="https://www.lnprcapital.com/research-note-two"
         contentType="article"
       />
       <main className="research-note-two-page" style={pageTheme}>        
