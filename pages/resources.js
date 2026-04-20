@@ -1,8 +1,6 @@
-import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import SEO from "../components/SEO";
-import Footer from "../components/Footer";
 
 const FILTER_OPTIONS = [
   { value: "all", label: "All" },
@@ -176,26 +174,30 @@ const REPORT_RESOURCES = [
     category: "Sector Outlook",
     date: "07 April 2026",
     title: "India's Copper Recycling Supercycle Is Just Beginning",
-    excerpt:"The confluence of EPR mandates, energy transition demand, and a structurally broken primary supply chain is creating one of the most compelling multi-year opportunities in Indian materials.",
+    excerpt:
+      "The confluence of EPR mandates, energy transition demand, and a structurally broken primary supply chain is creating one of the most compelling multi-year opportunities in Indian materials.",
     linkLabel: "Read Note",
     linkURL: "/research-note-one",
     showOverlay: true,
     image: "/images/research-note-one.jpg",
   },
-  // {
-  //   type: "report",
-  //   badgeLabel: "Research Note",
-  //   badgeClass: "badge-report",
-  //   iconType: "report",
-  //   iconSize: 32,
-  //   category: "Thematic",
-  //   date: "Feb 2026",
-  //   title: "Defence Manufacturing: Indigenisation at Inflection Point",
-  //   excerpt:
-  //     "India's defence offset policy is creating a new class of listed manufacturers worth watching closely.",
-  //   linkLabel: "Read Note",
-  //   showOverlay: true,
-  // },
+  {
+    type: "report",
+    badgeLabel: "Research Note",
+    badgeClass: "badge-report",
+    iconType: "report",
+    iconSize: 32,
+    category: "Thematic",
+    date: "19 April 2026",
+    title:
+      "The Geopolitics Paradox: 30 Years of Indian Markets Against War, Terror & Global Shocks",
+    excerpt:
+      "Why every major geopolitical event since Kargil has rewarded patient capital — and the five-step playbook for the next one",
+    linkLabel: "Read Note",
+    linkURL: "/research-note-two",
+    showOverlay: true,
+    image: "/images/imgNote2.jpg",
+  },
   // {
   //   type: "report",
   //   badgeLabel: "Research Note",
@@ -360,22 +362,25 @@ function PlayIcon({ size = 14 }) {
   );
 }
 
-function CardMeta({ category, date, read }) {
+function CardMeta({ category, date, read, badgeClass, badgeLabel }) {
   return (
-    <div className="card-meta">
-      <span className="card-cat">{category}</span>
-      {date ? (
-        <>
-          <span className="card-dot">·</span>
-          <span className="card-date">{date}</span>
-        </>
-      ) : null}
-      {read ? (
-        <>
-          <span className="card-dot">·</span>
-          <span className="card-read">{read}</span>
-        </>
-      ) : null}
+    <div className="card-meta-wrapper">
+      <div className="card-meta">
+        <span className="card-cat">{category}</span>
+        {date ? (
+          <>
+            <span className="card-dot">·</span>
+            <span className="card-date">{date}</span>
+          </>
+        ) : null}
+        {read ? (
+          <>
+            <span className="card-dot">·</span>
+            <span className="card-read">{read}</span>
+          </>
+        ) : null}
+      </div>
+      <div className={`card-type-badge ${badgeClass}`}>{badgeLabel}</div>
     </div>
   );
 }
@@ -455,9 +460,7 @@ export default function Resources() {
           height={500}
         />
       </div>
-      <div className={`card-type-badge ${resource.badgeClass}`}>
-        {resource.badgeLabel}
-      </div>
+
       {resource.showPlayButton ? (
         <div className="play-btn">
           <PlayIcon size={resource.iconSize === 36 ? 16 : 14} />
@@ -475,6 +478,8 @@ export default function Resources() {
           category={resource.category}
           date={resource.date}
           read={resource.read}
+          badgeClass={resource.badgeClass}
+          badgeLabel={resource.badgeLabel}
         />
         <h3 className="card-title-sm">{resource.title}</h3>
         <a
@@ -500,6 +505,8 @@ export default function Resources() {
           category={resource.category}
           date={resource.date}
           read={resource.read}
+          badgeClass={resource.badgeClass}
+          badgeLabel={resource.badgeLabel}
         />
         <h3 className="card-title-sm">{resource.title}</h3>
         <p className="card-excerpt">{resource.excerpt}</p>
@@ -522,6 +529,8 @@ export default function Resources() {
           category={resource.category}
           date={resource.date}
           read={resource.read}
+          badgeClass={resource.badgeClass}
+          badgeLabel={resource.badgeLabel}
         />
         <h3 className="card-title-sm">{resource.title}</h3>
         <p className="card-excerpt">{resource.excerpt}</p>
@@ -596,6 +605,8 @@ export default function Resources() {
                         category={FEATURED_MAIN.category}
                         date={FEATURED_MAIN.date}
                         read={FEATURED_MAIN.read}
+                        badgeClass={FEATURED_MAIN.badgeClass}
+                        badgeLabel={FEATURED_MAIN.badgeLabel}
                       />
                       <h2 className="card-title">{FEATURED_MAIN.title}</h2>
                       <p className="card-excerpt">{FEATURED_MAIN.excerpt}</p>
@@ -672,25 +683,25 @@ export default function Resources() {
 
             {/* RESEARCH NOTES */}
             {showReports ? (
-            <>
-              <div className="section-header scroll-anim" id="reports-header">
-                <h2>
-                  Research <span>Notes</span>
-                </h2>
-                <a
-                  href="#"
-                  className="view-all"
-                  onClick={preventPlaceholderNavigation}
-                >
-                  All Notes <ArrowIcon size={12} />
-                </a>
-              </div>
+              <>
+                <div className="section-header scroll-anim" id="reports-header">
+                  <h2>
+                    Research <span>Notes</span>
+                  </h2>
+                  <a
+                    href="#"
+                    className="view-all"
+                    onClick={preventPlaceholderNavigation}
+                  >
+                    All Notes <ArrowIcon size={12} />
+                  </a>
+                </div>
 
-              <div className="article-grid scroll-anim" id="reports-grid">
-                {visibleReports.map(renderArticleCard)}
-              </div>
-            </>
-          ) : null}
+                <div className="article-grid scroll-anim" id="reports-grid">
+                  {visibleReports.map(renderArticleCard)}
+                </div>
+              </>
+            ) : null}
           </div>
         </div>
 
