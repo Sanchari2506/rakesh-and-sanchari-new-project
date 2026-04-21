@@ -557,7 +557,7 @@ export default function Home() {
                 </ul>
                 <div className="svc-price-row">
                   <div className="svc-price">
-                    ₹14,999 <small>/ year</small>
+                    ₹11,999 <small>/ year</small>
                   </div>
                   <a
                     href="https://exly.live/xlkvg0"
@@ -629,7 +629,7 @@ export default function Home() {
                 </ul>
                 <div className="svc-price-row">
                   <div className="svc-price">
-                    ₹14,999 <small>/ year</small>
+                    ₹9,999 <small>/ year</small>
                   </div>
                   <a
                     href="https://exly.live/z51F17"

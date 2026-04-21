@@ -42,7 +42,7 @@ export default function ResearchNote() {
         {/* ============ BREADCRUMB / META BAR ============ */}
         <div className="metabar">
           <div className="metabar__inner">
-            Thematic Research Note <span className="dot">·</span> Macro &amp;
+            MACRO OUTLOOK <span className="dot">·</span> Macro &amp;
             Strategy Series <span className="dot">·</span>
             <strong>19 April 2026</strong>
           </div>

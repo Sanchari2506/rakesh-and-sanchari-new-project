@@ -187,7 +187,7 @@ const REPORT_RESOURCES = [
     badgeClass: "badge-report",
     iconType: "report",
     iconSize: 32,
-    category: "Thematic",
+    category: "MACRO OUTLOOK",
     date: "19 April 2026",
     title:
       "The Geopolitics Paradox: 30 Years of Indian Markets Against War, Terror & Global Shocks",
