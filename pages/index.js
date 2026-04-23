@@ -560,7 +560,7 @@ export default function Home() {
                     ₹11,999 <small>/ year</small>
                   </div>
                   <a
-                    href="https://exly.live/xlkvg0"
+                    href="https://lnprcapital.akamai.net.in/quick-pay/10/2"
                     className="btn-gold"
                     target="_blank"
                     style={{ fontSize: "12px", padding: "12px 24px" }}
@@ -632,7 +632,7 @@ export default function Home() {
                     ₹9,999 <small>/ year</small>
                   </div>
                   <a
-                    href="https://exly.live/z51F17"
+                    href="https://lnprcapital.akamai.net.in/quick-pay/10/1"
                     className="btn-gold"
                     target="_blank"
                     style={{ fontSize: "12px", padding: "12px 24px" }}
