@@ -85,7 +85,25 @@ The company serves industries such as oil, steel, and construction worldwide.`,
     returnLabel: "RETURNS DELIVERED",
     returnValue: "170%",
     returnValueMonths: "in 02 months",
-  }
+  },
+  {
+    title: "OSEL Devices Ltd",
+    status: "exited",
+    sector: "OEM",
+    reportFile: "/case-studies/OSEL_Devices_Premium.pdf",
+    recoPrice: "₹280 / share",
+    exitPrice: "₹569 / share",
+    thesis: `Founded in 2006, the company manufactures LED display systems and hearing aids.`,
+    metrics: [
+      { value: "30%", label: "5Yrs Rev CAGR" },
+      { value: "35%", label: "5Yrs PAT CAGR" },
+      { value: "14%", label: "ROE At Exit" },
+      { value: "25", label: "P/E At Exit" },
+    ],
+    returnLabel: "RETURNS DELIVERED",
+    returnValue: "100%",
+    returnValueMonths: "in 12 months",
+  },
 ];
 
 const EXITED_CASE_STUDY_RETURN_STYLE = {
